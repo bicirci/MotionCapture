@@ -1,0 +1,407 @@
+@media only screen and (min-width: 768px) {
+  .page-editing,
+  .header-fragments .layout .layout-content,
+  .content-fragment-page > .layout,
+  .footer-fragments > .layout {
+    min-width: 768px;
+    max-width: ;
+    padding-left: 10px;
+    padding-right: 10px;
+    _width: 1230px; /* IE6 only */
+  }
+  .content-fragment.top-border{margin-top:10px; padding-top: 10px !important; }
+  .content-fragment.with-spacing{padding:10px 0 10px 0}
+  .content-fragment .content-fragment-header{padding:0 0 10px 0}
+  .content-fragment.with-header{margin-top:10px}
+  .layout-content.content-left-sidebar-right .layout-region.content{padding-right:10px}
+  .layout-content.content-left-sidebar-right .layout-region.right-sidebar{padding-left:10px}
+  .layout-content.sidebar-left-content-right .layout-region.content{padding-left:10px}
+  .layout-content.sidebar-left-content-right .layout-region.left-sidebar{padding-right:10px}
+  .layout-content.sidebar-left-content-center-sidebar-right .layout-region.content{padding-left:10px;padding-right:10px}
+  .layout-content.sidebar-left-content-center-sidebar-right .layout-region.left-sidebar{padding-right:10px}
+  .layout-content.sidebar-left-content-center-sidebar-right .layout-region.right-sidebar{padding-left:10px}
+  .layout-content.content-left-split-sidebar-right-top-single-sidebar-right-bottom .layout-region.split-sidebar-left,.layout-content.content-left-split-sidebar-right-top-single-sidebar-right-bottom .layout-region.split-sidebar-right{padding-left:10px;padding-right:10px}
+  .layout-content.content-left-split-sidebar-right-top-single-sidebar-right-bottom .layout-region.content{padding-right:10px}
+  .layout-content.content-left-split-sidebar-right-top-single-sidebar-right-bottom .layout-region.right-sidebar{padding-left:10px}
+  .layout-content.header-top-content-left-sidebar-right .layout-region.content{padding-right:10px}
+  .layout-content.header-top-content-left-sidebar-right .layout-region.right-sidebar{padding-left:10px}
+  .layout-content.header-top-sidebar-left-content-right .layout-region.content{padding-left:10px}
+  .layout-content.header-top-sidebar-left-content-right .layout-region.left-sidebar{padding-right:10px}
+  .layout-content.header-top-sidebar-left-content-center-sidebar-right .layout-region.content{padding-left:10px;padding-right:10px}
+  .layout-content.header-top-sidebar-left-content-center-sidebar-right .layout-region.left-sidebar{padding-right:10px}
+  .layout-content.header-top-sidebar-left-content-center-sidebar-right .layout-region.right-sidebar{padding-left:10px}
+  .layout-content.header-top-split-content-footer .layout-region.left-sidebar{padding-right:10px}
+  .layout-content.header-top-split-content-footer .layout-region.right-sidebar{padding-left:10px}
+  .layout-content.header-top-content-left-split-sidebar-right-top-single-sidebar-right-bottom .layout-region.right-sidebar{padding-left:10px}
+  .layout-content.header-top-content-left-split-sidebar-right-top-single-sidebar-right-bottom .layout-region.content{padding-right:10px}
+  .layout-content.header-top-content-left-split-sidebar-right-top-single-sidebar-right-bottom .layout-region.split-sidebar-left{padding-left:10px;padding-right:10px}
+  .layout-content.header-top-content-left-split-sidebar-right-top-single-sidebar-right-bottom .layout-region.split-sidebar-right{padding-left:10px}
+  .layout-content.split-content .layout-region.content{padding-right:10px}
+  .layout-content.split-content .layout-region.right-sidebar{padding-left:10px}
+  .layout-content.header-top-split-content .layout-region.content{padding-right:10px}
+  .layout-content.header-top-split-content .layout-region.right-sidebar{padding-left:10px}
+  .layout-content.header-top-content-left-sidebar-right-footer .layout-region.content{padding-right:10px}
+  .layout-content.header-top-content-left-sidebar-right-footer .layout-region.right-sidebar{padding-left:10px}
+  .layout-content.header-top-sidebar-left-content-right-footer .layout-region.content{padding-left:10px}
+  .layout-content.header-top-sidebar-left-content-right-footer .layout-region.left-sidebar{padding-right:10px}
+  .layout-content.header-top-sidebar-left-content-center-sidebar-right-footer .layout-region.content{padding-left:10px;padding-right:10px}
+  .layout-content.header-top-sidebar-left-content-center-sidebar-right-footer .layout-region.left-sidebar{padding-right:10px}
+  .layout-content.header-top-sidebar-left-content-center-sidebar-right-footer .layout-region.right-sidebar{padding-left:10px}
+  .layout-content.header-top-content-left-split-sidebar-right-top-single-sidebar-right-bottom-footer .layout-region.content{padding-left:10px;padding-right:10px}
+  .layout-content.header-top-content-left-split-sidebar-right-top-single-sidebar-right-bottom-footer .layout-region.left-sidebar{padding-right:10px}
+  .layout-content.header-top-content-left-split-sidebar-right-top-single-sidebar-right-bottom-footer .layout-region.right-sidebar{padding-left:10px}
+  .layout-content.header-top-content-left-split-sidebar-right-top-single-sidebar-right-bottom-footer .layout-region.split-sidebar-left{padding-left:10px;padding-right:10px}
+  .layout-content.header-top-content-left-split-sidebar-right-top-single-sidebar-right-bottom-footer .layout-region.split-sidebar-right{padding-left:10px}
+}
+@media screen and (max-width: ) {
+   .content-fragment.featured-content-slider .content-fragment-content .featured-content-slider {
+     max-width: 100%;
+       padding-left: 0;
+       padding-right: 0;
+  }
+}
+
+/***** temp font switch ******/
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.glow-lookuptextbox {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif !important;
+}
+.composer-hashtag-selector li,
+.composer-mentionable-selector li {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.ui-webpreview .abbreviated-post.shared-link .post-name a {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.admin-bar {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.button_style {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.page-management-edit-link a {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.content-fragment .content-fragment-header {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.menu.save-page-content input[type="button"],
+.menu.select-page-content input[type="button"] {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.menu.save-page-content input[type="button"],
+.menu.select-page-content input[type="button"] {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.popup-list.notification .message {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.shared_link a {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.ui-webpreview .abbreviated-post.shared-link a {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.full-post.activity .abbreviated-post.shared-link a {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.banner.site .popup-list-count {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+ }
+ .banner.context {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+ }
+ .banner.context .navigation-list.applications ul a {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+ }
+ .uiselect > span {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif !important;
+ }
+ .uiselect.options > div > div {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif !important;
+ }
+ .filter .filter-option a {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.navigation-list.links a {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.navigation-list.navigation {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.breadcrumbs .breadcrumb {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.pager {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.links-popup-panel ul > li > span > a,
+.links-popup-panel ul a {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.sheet ul li > span {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.sheet ul li > span > a {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.sheet ul li > a {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.button-style {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+fieldset h1,
+fieldset h2,
+fieldset h3 {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+fieldset .field-list .field-item .field-item-header,
+fieldset .field-list .field-item .field-item-name,
+fieldset .field-list .field-item .field-item-description,
+fieldset .field-list .field-item .field-item-input,
+fieldset .field-list .field-item .field-item-validation {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+fieldset input[type="search"],
+fieldset input[type="password"],
+fieldset input[type="text"],
+fieldset input[type="input"],
+fieldset textarea {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+fieldset a.submit-form,
+fieldset input[type="button"],
+fieldset a.save-form,
+fieldset .button {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.content-details {
+   font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.content-details .attribute-list .attribute-item .attribute-value {
+   font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.content-fragment .content > .content h1,
+.popup-list .content > .content h1,
+.content-fragment .content > .content h2,
+.popup-list .content > .content h2,
+.content-fragment .content > .content h3,
+.popup-list .content > .content h3,
+.content-fragment .content > .content h4,
+.popup-list .content > .content h4,
+.content-fragment .content > .content h5,
+.popup-list .content > .content h5 {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.content-fragment .content.thumbnail .name,
+.popup-list .content.thumbnail .name {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.left-sidebar .content-fragment .content-list.content .content.abbreviated .name,
+.right-sidebar .content-fragment .content-list.content .content.abbreviated .name {
+   font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.push-notification {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.popup-list {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.popup-list .navigation-list.filter .navigation-item .internal-link {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.popup-list.bookmarks .user .user-name,
+.popup-list.notifications .user .user-name,
+.popup-list.conversations .user .user-name,
+.popup-list.user .user .user-name,
+.popup-list.site .user .user-name {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.popup-list.bookmarks .notification-preference .button,
+.popup-list.notifications .notification-preference .button,
+.popup-list.conversations .notification-preference .button,
+.popup-list.user .notification-preference .button,
+.popup-list.site .notification-preference .button {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.tab-set table a {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.modal-wrapper-wrapper .modal-wrapper .modal .modal-title {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.modal-wrapper-wrapper .modal-wrapper .modal .modal-content {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+fieldset a.submit-form,
+fieldset input[type="button"],
+fieldset a.save-form,
+fieldset .button {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.filter .filter-option A {
+  font-family: "Open Sans", sans-serif;
+}
+.banner.site .navigation-list UL .user.with-icon:before,
+.banner.site .navigation-list UL .user.with-icon .ie7_before {
+  font-family: "Open Sans", sans-serif;
+}
+.content-fragment {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.content-fragment.media-gallery-post .actions.download .download-attachment.button {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.content-fragment.activity-story-stream .activity-date-grouping {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.activity-story {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.content-list .content-item.activity-story {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.tourtip {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.tourtip .tourtip-actions a {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.recommended-content-slider {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.recommended-content-slider h3 {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.user-info-popup-content {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.content-fragment.featured-content-slider .featured-content-slider .content-list-wrapper .content-list .content-item .name {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.content-fragment.featured-content-slider .featured-content-slider .content-list-wrapper .content-list .content-item .content {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.composer-suggestion-selector {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.content-fragment.navigation-custom .navigation-list[data-direction='horizontal'] a {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.content-fragment.create-edit-page-comment .field-list .field-list .field-item.submit-button A.submit-button {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.content-fragment.comment-list .post-actions .navigation-item A.edit-post,
+.content-fragment.comment-list .post-actions .navigation-item A.delete-post {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+.content-fragment.create-edit-post FIELDSET A.button {
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+
+
+
+
+
+/********************************************/
+
+
+
+
+.content-fragment.activity-story-stream UL.content-list.activity-stories LI.content-item.activity.activity-story .full-post.activity .post-content.activity .activity-description .thread-content, .content-fragment.activity-story-stream UL.content-list.activity-stories LI.content-item.activity.activity-story .full-post.activity .post-content.activity .activity-description .thread-answer, .content-fragment.activity-story-stream UL.content-list.activity-stories LI.content-item.activity.activity-story .full-post.activity .post-content.activity .activity-description .thread-reply {
+    margin-top: 0.3em;
+}
+
+/********************************************/
+/*reducing grey on forum pages*/
+.content-fragment.thread-list .content-list.content .content-item {
+    border-bottom: 1px dotted #666;
+    /*padding: 0 0 0.6em;*/
+    padding: 0 0 0.3em;
+}
+.content-fragment .content.abbreviated .status, .popup-list .content.abbreviated .status {
+    color: #555;
+}
+.content-fragment.thread-list .content-list.content .content.abbreviated .status .attribute-list .attribute-item.answer-status A.ui-tip {
+    background: none;
+}
+/*********/
+
+.content-fragment .content > .content a, .popup-list .content > .content a {
+	text-decoration: underline;
+}
+.content-fragment .content > .content a:visited, .popup-list .content > .content a:visited {
+	color: #AA6666;
+}
+.content-fragment .content > .content a:hover, .popup-list .content > .content a:hover {
+    	border-bottom: none;
+	color:#CC0000;
+}
+
+
+/*private community request page*/
+#dPrivateContainer * {
+    margin: 0;
+}
+.pcRegFormButton:hover {
+    text-decoration: none;
+}
+.pcRegFormButton > span {
+    background-color: #cc0000;
+    border-radius: 0.3em;
+    color: #fff;
+    display: inline-block;
+    padding: 0.3em 0.6em;
+}
+.pcRegFormButton > span:hover {
+    background-color: #e60000;
+}
+.regRed {
+    color: #cc0000;
+    padding-left: 0.3em;
+}
+#pcRegFormSignIn  H4{
+    color: #333; 
+    font-size: 1.8em;
+}
+
+
+/**************************/
+
+/*MB blog subscribe button*/
+.navigation-list.blog-subscribe li a {
+    background-color: #156;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+
+}
+.navigation-list.blog-subscribe li a:hover {
+    background-color: #15677c;
+}
+
+.advanced-reply {
+	font-size: 20px
+	}
+
+.popup-list.search .multiple-column-list .content-list.content .content-item .name {
+    padding-bottom: 12px;
+}
+
+
+.navigation-list-item.language span {     
+    padding-left: 25px;
+    background-image: url('/themes/e2e/images/src-svg-ti_icons-objects-globe-white.svg');
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.navigation-list-item.language A:hover span {     
+    background-image: url('/themes/e2e/images/src-svg-ti_icons-objects-globe-gray.svg');
+}
+.navigation-list-item.language {position:fixed; right:12px; z-index:3; background: #cc0000;}

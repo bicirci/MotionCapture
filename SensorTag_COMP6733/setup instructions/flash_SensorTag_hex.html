@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<!-- saved from url=(0127)http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/594826?CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="robots" content="index,follow"><meta name="keywords" content="# BLE Stack 2.2, # android, # 2650, # ble sdk, CC2650, #  CC2650, # BLE Stack, CC2650STK, code Composer studio, # Bluetooth Low energy #firmware#CC2650, # BLE, #  CC2650 # LED, CC2640, # application, # BIM"><meta name="e2e_group" content="Support Forums"><meta name="e2e_group_family" content="Wireless connectivity"><meta name="e2e_subgroup_family" content="Bluetooth®"><meta name="e2e_type" content="Forum"><meta name="GENERATOR" content="Zimbra Community 8">
+<link rel="canonical" href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/594826?CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file">
+<link rel="stylesheet" href="./flash_SensorTag_hex_files/layout.css" type="text/css" media="screen"><script type="text/javascript" async="" charset="utf-8" src="./flash_SensorTag_hex_files/f.txt" id="utag_52"></script><script type="text/javascript" async="" charset="utf-8" src="./flash_SensorTag_hex_files/di.js.download" id="utag_221"></script><script type="text/javascript" async="" charset="utf-8" src="./flash_SensorTag_hex_files/analytics.js.download" id="tealium-tag-7110"></script><script src="./flash_SensorTag_hex_files/utag.js(1).download" type="text/javascript" async=""></script><script type="text/javascript" async="" src="./flash_SensorTag_hex_files/metrics-min.js.download"></script><script type="text/javascript" defer="" async="" src="./flash_SensorTag_hex_files/evergage.min.js.download"></script><script type="text/javascript" src="./flash_SensorTag_hex_files/jquery.min.js.download"></script><script type="text/javascript" src="./flash_SensorTag_hex_files/telligent.glow.min.js.download"></script><script type="text/javascript" src="./flash_SensorTag_hex_files/jquery.validate.min.js.download"></script><script type="text/javascript">
+// <![CDATA[
+try { jQuery.extend(jQuery.validator.messages,{required:'This field is required.',remote:'Please fix this field.',date:'Please enter a valid date.',dateISO:'Please enter a valid date (ISO).',number:'Please enter a valid number.',digits:'Please enter only digits.',creditcard:'Please enter a valid credit card number.',equalTo:'Please enter the same value again.',accept:'Please enter a value with a valid extension.',maxlength:jQuery.validator.format('Please enter no more than {0} characters.'),minlength:jQuery.validator.format('Please enter at least {0} characters.'),rangelength:jQuery.validator.format('Please enter a value between {0} and {1} characters long.'),range:jQuery.validator.format('Please enter a value between {0} and {1}.'),max:jQuery.validator.format('Please enter a value less than or equal to {0}.'),min:jQuery.validator.format('Please enter a value greater than or equal to {0}.')}); } catch(e) { };
+// ]]>
+</script><script type="text/javascript" src="./flash_SensorTag_hex_files/telligent.evolution.min.js.download"></script><script type="text/javascript">
+// <![CDATA[
+try { jQuery.telligent.evolution.site.configure({baseUrl:'\/',isRemote:false,remoteUrlEncodePattern:'',monthNames:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],dayNames:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],authorizationCookieName:'AuthorizationCookie',defaultErrorMessage:'An error occurred.  Please try again or contact your administrator.',defaultMultiErrorMessagePrefix:'The following errors occurred:  ',silverlightFileUploadEnabled:true,accessingUserId:2101,accessingUserIsSystemAccount:true});
+jQuery.extend($.fn.evolutionUserFileTextBox.defaults,{removeText:'Remove',selectText:'Select\/Upload...',noFileText:'No File Selected'});
+jQuery.telligent.evolution.navigationConfirmation.configure({message:'Unless you save before leaving this page, you will lose any changes you have made.'});
+jQuery.telligent.evolution.validation.registerExtensions({passwordInvalidMessage:'Password contains invalid chars ...',passwordRegex:'^.*$',emailInvalidMessage:'Your email address is invalid.',emailRegex:'^\\w+([-+.]+\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$',usernameInvalidMessage:'Your sign in name does not meet the requirements for this site.',usernameRegex:'^[a-zA-Z0-9_\\- @\\.]+$',emailsInvalidMessage:'One or more emails is invalid',urlInvalidMessage:'URL not in correct format',urlRegex:'^((http|https|mailto|mms|ftp):|\/|#|~\/)'});
+jQuery.extend(jQuery.fn.evolutionLike.defaults,{likeText:'Like',unlikeText:'Unlike',modalTitleText:'People who like this',modalShowMoreText:'Show More',whoLikesOtherText:'<a href=\"{user_profile_url}\" class=\"internal-link view-user-profile\">{user_display_name}<\/a> likes this',whoLikesOtherTwoText:'<a href=\"{user_profile_url}\" class=\"internal-link view-user-profile\">{user_display_name}<\/a> and <span class=\"who-likes\">1 other<\/span> like this',whoLikesOtherMultipleText:'<a href=\"{user_profile_url}\" class=\"internal-link view-user-profile\">{user_display_name}<\/a> and <span class=\"who-likes\">{count} others<\/span> like this',whoLikesAccessingText:'You like this',whoLikesAccessingTwoText:'You and <span class=\"who-likes\">1 other<\/span> like this',whoLikesAccessingMultipleText:'You and <span class=\"who-likes\">{count} others<\/span> like this'});
+jQuery.extend(jQuery.fn.evolutionInlineTagEditor.defaults,{editButtonText:'Edit tags',selectTagsText:'Select tags',saveTagsText:'Save',cancelText:'Cancel'});
+jQuery.extend(jQuery.fn.evolutionStarRating.defaults,{titles:['Terrible','Poor','Fair','Average','Good','Excellent'],ratingMessageFormat:'Average rating: {rating} out of {count} ratings.'});
+jQuery.extend(jQuery.fn.evolutionModerate.defaults,{moderateLinkText:'moderate',reportLinkText:'Flag as spam\/abuse',reportedLinkText:'Flagged as spam\/abuse',reportedNotificationMessageText:'{NAME}\'s post has been flagged. <strong>Thank you for your feedback.<\/strong>'});
+jQuery.extend(jQuery.fn.evolutionBookmark.defaults,{deleteBookmarkText:'Unbookmark {content_type_name}',addBookmarkText:'Bookmark this {content_type_name}',processingText:'...'});
+} catch(e) { };
+// ]]>
+</script><script type="text/javascript">jQuery(function($) {
+	$.telligent.evolution.messaging.subscribe('userActionSubscibeToggle', function(data) {
+		var e = $(data.target);
+		var userId = e.data('userid'), accessingUserId = e.data('accessinguserid'), v = e.data('subscribe');
+		e.html('...');
+		if (v) {
+			$.telligent.evolution.post({
+				url: $.telligent.evolution.site.getBaseUrl() + 'api.ashx/v2/usersubscriptions/{FollowerId}/following.json',
+				data: {  FollowerId: accessingUserId, FollowingId: userId },
+				dataType: 'json',
+				success: function(response) { e.html('Email unsubscribe to user').data('subscribe', false); },
+				error: function(response) {  e.html('Email subscribe to user').data('subscribe', true); }
+			});
+		} else {
+			$.telligent.evolution.del({
+				url: $.telligent.evolution.site.getBaseUrl() + 'api.ashx/v2/usersubscriptions/{FollowerId}/following/{FollowingId}.json',
+				data: {  FollowerId: accessingUserId, FollowingId: userId },
+				dataType: 'json',
+				success: function(response) { e.html('Email subscribe to user').data('subscribe', true); },
+				error: function(response) {  e.html('Email subscribe to user').data('subscribe', false); }
+			});
+		}
+	});
+});</script><script type="text/javascript">jQuery(function($) {
+	$.telligent.evolution.messaging.subscribe('userActionFriendshipToggle', function(data) {
+		var e = $(data.target);
+		var userId = e.data('userid'), accessingUserId = e.data('accessinguserid'), v = parseInt(e.data('friendship'));
+		var t = e.html();
+		e.html('...');
+		if (v == 0) {
+				e.html(t);
+				$.glowModal('/user/requestfriend?UserId=' + userId + '', {width:670,height:390});
+		} else if (v == 3) {
+				$.telligent.evolution.post({
+					url: $.telligent.evolution.site.getBaseUrl() + 'api.ashx/v2/users/{RequestorId}/friends.json',
+					data: { RequestorId: accessingUserId, RequesteeId: userId, RequestMessage: '<p style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;\"><strong>Hi,<\/strong><\/p>\n<p style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;\"><strong>I would like to be friends with you on the <a title=\"TI E2E Community\" style=\"color: #ff0000;\">TI E2E Support forums<\/a>.&nbsp;&nbsp;&nbsp; Thank you!<\/strong><\/p> '},
+					dataType: 'json',
+					success: function(response) { window.location = window.location; },
+					error: function(response) {  e.html(t); }
+				});
+		} else if (v == 1 || v == 2 || v == 4) {
+			if (v == 4 || (v == 1 && window.confirm('Are you sure you want to cancel this friendship request?')) || (v == 2 && window.confirm('Are you sure you want to unfriend this person?'))) {
+				$.telligent.evolution.del({
+					url: $.telligent.evolution.site.getBaseUrl() + 'api.ashx/v2/users/{RequestorId}/friends/{RequesteeId}.json',
+					data: { RequestorId: accessingUserId, RequesteeId: userId },
+					dataType: 'json',
+					success: function(response) { window.location = window.location; },
+					error: function(response) {  e.html(t); }
+				});
+			} else { e.html(t); }
+		}
+	});
+});</script><script type="text/javascript">(function($){ $.telligent.evolution.media.defaults.endpoint = 'http://e2e.ti.com/callback.ashx?__type=Telligent.Evolution.Api.Plugins.Endpoints.FileViewerEndpoint%2C%20Telligent.Evolution.Api'; }(jQuery));</script><script type="text/javascript">(function($){ $.telligent.evolution.preview.defaults.endpoint = 'http://e2e.ti.com/callback.ashx?__type=Telligent.Evolution.Api.Plugins.Endpoints.WebPreviewEndpoint%2C%20Telligent.Evolution.Api'; }(jQuery));</script><script type="text/javascript">(function($){ $.telligent.evolution.language.defaults.dateEndpoint = 'http://e2e.ti.com/callback.ashx?__type=Telligent.Evolution.Api.Plugins.Endpoints.DateFormattingEndpoint%2C%20Telligent.Evolution.Api'; }(jQuery));</script><script type="text/javascript">(function($){ $.fn.evolutionUserFileTextBox.defaults.endpoint = 'http://e2e.ti.com/callback.ashx?__type=Telligent.Evolution.Api.Plugins.Endpoints.UserFileTextBoxEndpoint%2C%20Telligent.Evolution.Api'; }(jQuery));</script>
+          <meta name="viewport" content="width=device-width"><meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=3"><link rel="shortcut icon" type="image/ico" href="http://e2e.ti.com/cfs-filesystemfile/__key/themefiles/s-ac6c06b274524486add6d4f6b26d379d-files/favicon.ico"><link rel="apple-touch-icon-precomposed" href="http://e2e.ti.com/cfs-filesystemfile/__key/themefiles/s-fd-ac6c06b274524486add6d4f6b26d379d-files/favicon152.png"><meta name="msapplication-TileColor" content="#FFFFFF"><meta name="msapplication-TileImage" content="http://e2e.ti.com/cfs-filesystemfile/__key/themefiles/s-fd-ac6c06b274524486add6d4f6b26d379d-files/favicon144.png">
+        <link type="text/css" rel="stylesheet" href="./flash_SensorTag_hex_files/screen.less"><!--[if lte IE 7]><link type="text/css" rel="stylesheet" href="http://e2e.ti.com/cfs-filesystemfile/__key/themefiles/h-000000011525e3fe-s-ac6c06b274524486add6d4f6b26d379d-stylesheetfiles-http-e2eticom-80/ie7.less" /><![endif]--><!--[if lte IE 8]><link type="text/css" rel="stylesheet" href="http://e2e.ti.com/cfs-filesystemfile/__key/themefiles/h-000000011525e3fe-s-ac6c06b274524486add6d4f6b26d379d-stylesheetfiles-http-e2eticom-80/ie8.less" /><![endif]--><!--[if gte IE 9]--><link type="text/css" rel="stylesheet" href="./flash_SensorTag_hex_files/print.css" media="print"><!--[endif]--><!--[if gte IE 9]--><link type="text/css" rel="stylesheet" href="./flash_SensorTag_hex_files/handheld.less" media="only screen and (max-width: 768px)"><!--[endif]--><!--[if gte IE 9]--><link type="text/css" rel="stylesheet" href="./flash_SensorTag_hex_files/tablet.less" media="only screen and (min-device-width: 769px) and (max-device-width: 1024px) and (orientation: landscape), only screen and (min-device-width: 769px) and (max-device-width: 1024px) and (orientation: portrait)"><!--[endif]--><link type="text/css" rel="stylesheet" href="./flash_SensorTag_hex_files/calendar.css"><!--[if gte IE 9]--><link type="text/css" rel="stylesheet" href="./flash_SensorTag_hex_files/calendar-handheld.css" media="(max-width: 768px)"><!--[endif]--><link type="text/css" rel="stylesheet" href="./flash_SensorTag_hex_files/analyticswidget.css"><script type="text/javascript" src="./flash_SensorTag_hex_files/theme.js.download"></script><script type="text/javascript" src="./flash_SensorTag_hex_files/analytics.js(1).download"></script>
+          <link type="text/css" rel="stylesheet" href="./flash_SensorTag_hex_files/dynamic-style" media="screen,print">
+        
+          
+        
+          <link type="text/css" rel="stylesheet" href="./flash_SensorTag_hex_files/dynamic-style(1)" media="screen,print">
+        <link rel="alternate" type="application/rss+xml" title="user4913242&#39;s Activities (RSS 2.0)" href="http://e2e.ti.com/members/4913242/activities/rss"><link rel="alternate" type="application/rss+xml" title="Activities of People user4913242 Follows (RSS 2.0)" href="http://e2e.ti.com/members/4913242/activities/followersrss"><link rel="alternate" type="application/rss+xml" title="user4913242&#39;s Groups Activities (RSS 2.0)" href="http://e2e.ti.com/members/4913242/activities/groupsrss"><link rel="alternate" type="application/rss+xml" title="Bluetooth® (RSS 2.0)" href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/rss"><link rel="alternate" type="application/rss+xml" title="Bluetooth® forum - Recent Threads (RSS 2.0)" href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/rss?Mode=0"><link rel="alternate" type="application/rss+xml" title="Bluetooth® forum - Recent Posts (RSS 2.0)" href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/rss?Threadless=1"><link rel="alternate" type="application/rss+xml" title="CCS/CC2650STK: Unable to flash SensorTag &quot;super hex&quot; file (RSS 2.0)" href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/594826/rss?ContentTypeId=0"><title>
+	[Resolved] CCS/CC2650STK: Unable to flash SensorTag "super hex" file - Bluetooth® forum - Bluetooth® - TI E2E support forums
+</title><script>bazadebezolkohpepadr="309134437"</script><script type="text/javascript" src="./flash_SensorTag_hex_files/126d0692" defer=""></script><script type="text/javascript" async="" charset="utf-8" src="./flash_SensorTag_hex_files/utag.87.js.download" id="utag_ti.main_87"></script><script type="text/javascript" async="" charset="utf-8" src="./flash_SensorTag_hex_files/utag.221.js.download" id="utag_ti.main_221"></script><script type="text/javascript" async="" charset="utf-8" src="./flash_SensorTag_hex_files/utag.52.js.download" id="utag_ti.main_52"></script><script type="text/javascript" async="" charset="utf-8" src="./flash_SensorTag_hex_files/utag.200.js.download" id="utag_ti.main_200"></script><link type="text/css" rel="stylesheet" href="./flash_SensorTag_hex_files/main.css" data-systemjs-css=""></head><body spellcheck="true" class="touch" style="padding-top: 105px;"><form name="ctl04" method="post" action="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/594826?CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file" id="ctl04" novalidate="novalidate">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUBMGRk2maSnWryKnTSdAgVkmY8csPR0g9yKyXi53CrGfvLEX0=">
+</div>
+
+
+<script src="./flash_SensorTag_hex_files/WebResource.axd" type="text/javascript"></script>
+<script src="./flash_SensorTag_hex_files/WebResource(1).axd" type="text/javascript"></script>
+<script src="./flash_SensorTag_hex_files/WebResource(2).axd" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C21772F6">
+</div><div class="header-fragments-header"></div>
+<div class="header-fragments" id="ctl05_ctl01_page"><div class="layout">
+<div class="layout-header"></div>
+<div class="layout-content header-top-content with-adaptable-elements" id="ctl05_ctl01_layout" style="visibility: visible; top: 0px; z-index: 10; position: static;">
+<div class="layout-region header" id="ctl05_ctl01_header" style="position: fixed; top: 0px; z-index: 10;">
+<div class="layout-region-inner header"><div class="content-fragment site-banner no-wrapper responsive-1" id="header-1791">
+<div class="content-fragment-content">
+
+
+
+
+
+
+
+
+
+				
+		
+	
+		
+
+
+
+<div class="banner site  with-site-navigation " id="header-1791_banner">
+	<div class="avatar">
+						    
+								              <a href="http://www.ti.com/" title="Go to TI.com" class="ui-tip" style="background-image: url(&#39;/cfs-file/__key/defaultwidgets/e2e80000000000000000000000000000-8e37c7cc2be34dab910dfa4c3808ef60/iconHeader.svg&#39;); background-image: url(&#39;/cfs-file/__key/defaultwidgets/e2e80000000000000000000000000000-8e37c7cc2be34dab910dfa4c3808ef60/ti_5F00_logo.png&#39;)\9; *background-image: url(&#39;/cfs-file/__key/defaultwidgets/e2e80000000000000000000000000000-8e37c7cc2be34dab910dfa4c3808ef60/ti_5F00_logo.png&#39;); background-repeat: no-repeat; width: 280px; height: 35px">
+			  </a>
+      			</div>
+
+      <h3 class="name hidden">TI E2E support forums</h3>
+
+					<div class="navigation-list site-links" id="header-1791_bannerSiteLinks">
+			<ul>
+				<li class="navigation-list-item">
+					<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/594826?CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file#" class="site-navigation group ui-tip" id="header-1791_site" data-tip="Groups" title="Groups">Menu</a>
+				</li>
+			</ul>
+		</div>
+	    	<fieldset class="search" id="header-1791_searchFields" style="">
+		<ul class="field-list">
+			<li class="field-item">
+				<span class="field-item-description hidden">
+					<label>Search through millions of questions and answers</label>
+				</span>
+				<span class="field-item-input">
+					<input autocomplete="off" type="search" placeholder="Search through millions of questions and answers" id="header-1791_Search" value="">
+					<input class="searchIcon" type="button">
+				</span>
+			</li>
+		</ul>
+	</fieldset>
+ 
+					<div class="navigation-list user-links" id="header-1791_bannerLinks">
+				<ul style="width: 100%">
+																																																		<li class="navigation-list-item">
+							<a href="http://e2e.ti.com/login?ReturnUrl=%2Fsupport%2Fwireless-connectivity%2Fbluetooth%2Ff%2F538%2Ft%2F594826%3FCCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file" class="ui-tourtip internal-link user with-icon ui-tip" data-tourtipkey="t;zMc3juMrq02RDfpMOAjvYA;f0N6uoxTJ7j0m8c5A12xtw" data-tourtipmessage="Sign in or Join the support forums." title="Join or sign in">User</a>
+						</li>
+																																													</ul>
+			</div>
+	
+	<div class="navigation-list handheld">
+		<ul>
+			<li class="navigation-list-item">
+				<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/594826?CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file#" class="site" id="header-1791_handheldSiteLinksLink">Menu</a>
+			</li>
+			<li class="navigation-list-item">
+				<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/594826?CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file#" class="search" id="header-1791_handheldSearchFieldsLink">Search through millions of questions and answers</a>
+			</li>
+			<li class="navigation-list-item">
+															<a href="http://e2e.ti.com/login?ReturnUrl=%2Fsupport%2Fwireless-connectivity%2Fbluetooth%2Ff%2F538%2Ft%2F594826%3FCCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file" class="user">User</a>
+												</li>
+		</ul>
+	</div>
+	<div class="container handheld">
+		<fieldset class="search" style="" id="header-1791_handheldSearchFields"></fieldset>
+		<div class="user-links" style="display:none" id="header-1791_handheldBannerLinks"></div>
+	</div>
+
+</div>
+<div class="e2e-header">
+  <div class="e2e-banner">
+		<a href="http://e2e.ti.com/" title="E2E™ support forums" class="ui-tip">E2E™ support forums</a>
+  </div>
+</div>
+
+
+
+        
+            
+    
+
+
+
+			</div>
+<div class="content-fragment-footer"></div>
+</div>
+<div class="content-fragment navigation-custom no-wrapper responsive-hidden" id="header-1792">
+<div class="content-fragment-content">
+
+
+							
+
+
+			<div class="navigation-list links" id="header-1792_container" data-minlinks="0" data-direction="horizontal" data-maxlinks="7" data-lid="" style="display: block; overflow: hidden; height: 42px;"><div class="container" style="overflow: auto hidden; height: 62px;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 660px; visibility: visible;"><li class="navigation-list-item" style="display: inline;"><a href="http://e2e.ti.com/support/" style="float: left;">Forums</a><ul class="children" style="display: none; float: left;">
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/amplifiers/">Amplifiers</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/audio/">Audio</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/clock-and-timing/">Clock &amp; timing</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/data-converters/">Data converters</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/dlp/">DLP® products</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/interface/">Interface</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/isolation/">Isolation</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/logic/">Logic </a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/microcontrollers/">Microcontrollers</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/motor-drivers/">Motor drivers</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/power-management/">Power management</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/processors/">Processors</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/rf-microwave/">RF &amp; microwave</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/sensors/">Sensors</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/site-support/">Site support</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/switches-multiplexers/">Switches &amp; multiplexers</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/tools/">Tools</a>
+							</li>
+
+																			<li>
+																																																																																				<a href="http://e2e.ti.com/support/wireless-connectivity/" class="selected">Wireless connectivity</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/legacy_forums/">Archived forums</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/archive/">Archived groups</a>
+							</li>
+
+										</ul></li><li class="navigation-list-item" style="display: inline;"><a href="http://e2e.ti.com/blogs_/" style="float: left;">Technical articles</a><ul class="children" style="display: none; float: left;">
+																																															<li>
+																						<a href="http://e2e.ti.com/blogs_/b/analogwire">Analog</a>
+						</li>
+																														
+																																															<li>
+																						<a href="http://e2e.ti.com/blogs_/b/behind_the_wheel">Automotive</a>
+						</li>
+																														
+																																															<li>
+																						<a href="http://e2e.ti.com/blogs_/b/enlightened">DLP® technology</a>
+						</li>
+																														
+																																															<li>
+																						<a href="http://e2e.ti.com/blogs_/b/process">Embedded processing</a>
+						</li>
+																														
+																																															<li>
+																						<a href="http://e2e.ti.com/blogs_/b/industrial_strength">Industrial</a>
+						</li>
+																														
+																																															<li>
+																						<a href="http://e2e.ti.com/blogs_/b/powerhouse">Power management</a>
+						</li>
+																														
+																																															<li>
+																						<a href="http://e2e.ti.com/blogs_/b/thinkinnovate">Think. Innovate</a>
+						</li>
+																														
+																																																</ul></li><li class="navigation-list-item" style="display: inline;"><a href="https://training.ti.com/" style="float: left;">TI training</a><ul class="children" style="display: none; float: left;">
+																			<li>
+								<a href="http://www.ti.com/ww/en/techdays/index.html">Tech days</a>
+							</li>
+																			<li>
+								<a href="https://training.ti.com/">Online training</a>
+							</li>
+																			<li>
+								<a href="https://training.ti.com/search-catalog/type/classroom/type/webcast">Live events</a>
+							</li>
+																			<li>
+								<a href="http://www.ti.com/ww/en/power_supply_design_seminars/index.html">Power Supply Design Seminar</a>
+							</li>
+													</ul></li><li class="navigation-list-item" style="display: inline;"><a href="http://e2e.ti.com/support/site-support/f/1024/t/761620" style="float: left;">Getting started</a></li><li class="navigation-list-item language" style="display: inline;"><a href="https://e2echina.ti.com/" class="language-link" title="简体中文" style="float: left;"><span></span>简体中文</a></li></ul></div></div>
+		
+			</div>
+<div class="content-fragment-footer"></div>
+</div>
+<div class="content-fragment header-fragment t-i-header no-wrapper responsive-1" id="header-1793">
+<div class="content-fragment-content">
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+			
+	
+<script src="./flash_SensorTag_hex_files/personalization.js.download"></script>
+<script language="javascript" type="text/javascript" src="./flash_SensorTag_hex_files/includes_pg.js.download"></script>
+<script src="./flash_SensorTag_hex_files/lib.js.download"></script>
+
+	</div>
+<div class="content-fragment-footer"></div>
+</div>
+</div>
+</div>
+<div class="layout-region content" id="ctl05_ctl01_content">
+<div class="layout-region-inner content"><div class="content-fragment group-banner no-wrapper responsive-1" id="header-1794">
+<div class="content-fragment-content">
+
+
+
+
+
+
+<link rel="stylesheet" href="./flash_SensorTag_hex_files/main(1).css">
+<div class="banner context  ">
+  	<div class="avatar">
+		<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/">
+			<img src="./flash_SensorTag_hex_files/default.png-68x68x2.png" alt="Bluetooth®">
+		</a>
+	</div>
+	<h3 class="name">
+		<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/"><span>Bluetooth®</span></a>
+	</h3>
+
+			<h2 class="description">
+			<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538"><span>Bluetooth® forum</span></a>
+		</h2>
+	
+			<div class="navigation-list applications">
+			<div class="" data-minlinks="0" data-maxlinks="0" data-direction="vertical"><div class="container"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; visibility: visible;"><li class="navigation-list-tem"><a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/594826?CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file#" class="more" data-more="">More</a></li></ul></div></div>
+		</div>
+	
+	
+																			<div class="new-buttons">
+						<div class="navigation-list related">
+				<div class="" data-maxlinks="1" data-minlinks="1"><div class="container"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; visibility: visible;"><li class="navigation-list-item"><a class="internal-link add-post forum" href="http://e2e.ti.com/p/addpost?rt=594826">Ask a related question</a><div class="help" title="A related question is a question created from another question. When the related question is created, it will be automatically linked to the original question.">
+								What is a related question?
+							</div></li></ul></div></div>
+			</div>
+						<div class="navigation-list new">
+				<div class="" data-maxlinks="1" data-minlinks="1"><div class="container"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; visibility: visible;"><li class="navigation-list-item"><a class="internal-link add-post forum" href="http://e2e.ti.com/p/addpost?fn=538">
+																									Ask a new question
+																							</a></li></ul></div></div>
+			</div>
+		</div>
+		
+		</div>
+</div>
+<div class="content-fragment-footer"></div>
+</div>
+<div id="header-1818"></div>
+</div>
+</div>
+</div>
+<div class="layout-footer"></div>
+</div></div><div class="header-fragments-footer"></div><div class="single-column" style="display: none;"></div><div class="content-fragment-page forums-thread" id="ctl05_ctl02_page"><div class="layout">
+<div class="layout-header"></div>
+<div class="layout-content content-left-sidebar-right" id="ctl05_ctl02_layout">
+<div class="layout-region right-sidebar" id="ctl05_ctl02_right-sidebar">
+<div class="layout-region-inner right-sidebar"><div id="fragment-320986"></div>
+<div id="fragment-320987"></div>
+<div class="content-fragment raw-html no-wrapper responsive-1 
+	    navigation-custom
+    " id="fragment-320988">
+<div class="content-fragment-content">
+
+<div class="navigation-list links" style="display: block;">
+<ul style="list-style: outside none none; padding: 0px; margin: 0px; overflow: hidden; visibility: visible;">
+<li class="navigation-list-item parent-link"><a href="http://e2e.ti.com/support/wireless-connectivity/">Go to Wireless connectivity</a></li>
+</ul>
+</div>
+
+	</div>
+<div class="content-fragment-footer"></div>
+</div>
+<div class="content-fragment navigation-custom no-wrapper with-spacing responsive-1" id="fragment-320989">
+<div class="content-fragment-content">
+
+
+							
+
+
+			<div class="navigation-list links" id="fragment-320989_container" data-minlinks="0" data-direction="vertical" data-maxlinks="4" data-lid="" style="display: block;"><div class="container"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; visibility: visible;"><li class="navigation-list-item"><a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538" class="selected">Forums</a><ul class="children" style="display:none">
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/amplifiers/">Amplifiers</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/audio/">Audio</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/clock-and-timing/">Clock &amp; timing</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/data-converters/">Data converters</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/dlp/">DLP® products</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/interface/">Interface</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/isolation/">Isolation</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/logic/">Logic </a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/microcontrollers/">Microcontrollers</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/motor-drivers/">Motor drivers</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/power-management/">Power management</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/processors/">Processors</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/rf-microwave/">RF &amp; microwave</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/sensors/">Sensors</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/site-support/">Site support</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/switches-multiplexers/">Switches &amp; multiplexers</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/tools/">Tools</a>
+							</li>
+
+																			<li>
+																																																																																				<a href="http://e2e.ti.com/support/wireless-connectivity/" class="selected">Wireless connectivity</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/legacy_forums/">Archived forums</a>
+							</li>
+
+																			<li>
+																																																																											<a href="http://e2e.ti.com/support/archive/">Archived groups</a>
+							</li>
+
+										</ul></li></ul></div></div>
+	
+			</div>
+<div class="content-fragment-footer"></div>
+</div>
+<div id="fragment-320990"></div>
+</div>
+</div>
+<div class="layout-region content" id="ctl05_ctl02_content">
+<div class="layout-region-inner content"><div id="fragment-320991"></div>
+<div id="fragment-320992"></div>
+<div id="fragment-320994"></div>
+<div class="content-fragment thread no-wrapper with-spacing responsive-1" id="fragment-320995">
+<div class="content-fragment-content">
+
+ 
+
+
+<div id="pi320995-paged-content">
+
+
+
+
+
+
+
+												
+	
+	
+
+
+
+
+
+	<div class="locked-banner">
+		<p>This thread has been locked.</p>
+		<p>If you have a related question, please click the "<a href="http://e2e.ti.com/p/addpost?rt=594826">Ask a related question</a>" button in the top right corner. The newly created question will be automatically linked to this question.</p>
+	</div>
+
+
+
+
+
+
+
+
+	<div class="content full" id="594826">
+
+		
+							<div class="status">
+				<ul class="attribute-list">
+					<li class="attribute-item resolution-status">
+						<span class="attribute-value verified">
+							Resolved
+						</span>
+					</li>
+				</ul>
+			</div>
+				
+					<h1 class="name">CCS/CC2650STK: Unable to flash SensorTag "super hex" file</h1>
+            <div class="author starter-header">
+              <div class="user-icons">
+                <span class="rank-icon">
+                                                      <div style="background: url(&#39;/cfs-filesystemfile/__key/communityserver-components-ranks/00-00-00-00-01/icon_5F00_prodigy.gif&#39;) no-repeat" class="rank-image">
+                    <a onclick="self.location=&#39;/support/site-support/f/1024/t/691964&#39;;return false" title="Click here for explanation of levels." href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/594826?CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file">
+                      <span class="rank-name">Prodigy</span>
+                    </a><span class="rank-points">40</span> points
+                  </div>
+                                  </span>
+                <span class="role-icon">
+                                    <img align="absbottom" src="./flash_SensorTag_hex_files/communitymember.gif">
+                </span>
+              </div>
+            	<span class="user-name">
+            		            			<a href="http://e2e.ti.com/members/4913242" class="internal-link view-user-profile">
+            				user4913242
+            			</a>
+            		            		            	</span>
+            	<div class="avatar">
+            		            			<a href="http://e2e.ti.com/members/4913242">
+            				<img src="./flash_SensorTag_hex_files/default.png-32x32x2.png" border="0" alt="user4913242">
+            			</a>
+            		            	</div>
+				<div class="post-counts">
+					<p><strong>Replies:</strong> 6</p>
+					<p><strong>Views:</strong> 1251</p>
+				</div>
+			</div>
+		
+				
+		<div class="content">
+						<div id="fragment-320995_postBodyaeae7bc2-25c8-40b1-a54b-b8d528c8e855">
+				<p><b>Part Number:</b>  <a class="internal-link folder tool" rel="nofollow noreferrer" target="_blank" href="https://www.ti.com/tool/CC2650STK" title="Tool Folder">CC2650STK</a></p><p><b>Tool/software:</b>  Code Composer Studio</p><p>Hello!<br>I’m very confused about how compile “sensortag_<a class="internal-link folder tool" rel="nofollow noreferrer" target="_blank" href="https://www.ti.com/tool/CC2650STK" title="Tool Folder">cc2650stk</a>_app” in my SensorTag <a class="internal-link folder product" rel="nofollow noreferrer" target="_blank" href="https://www.ti.com/product/CC2650" title="Product Folder">CC2650</a>. I followed a lot of tutorials and threads of this forum but I can’t do it.<br>I have a Debug Dev Pack XDS110, Code Composer Studio 7, SmartRF Flash Programmer 2 and <a class="internal-link folder tool" rel="nofollow noreferrer" target="_blank" href="https://www.ti.com/tool/BLE-STACK" title="Tool Folder">BLE-STACK</a>-2-2-1<br>If I program de precompiled hex file “<a class="internal-link folder tool" rel="nofollow noreferrer" target="_blank" href="https://www.ti.com/tool/CC2650STK" title="Tool Folder">cc2650stk</a>_sensortag_rel.hex” (C:\ti\simplelink\ble_sdk_2_02_01_18\examples\hex) in my SensorTag, it works well. The green led flashes and my android app detected it.<br>But if I try to generate the super hex file, the sensortag don’t work.<br>I follow the steps of <a href="http://processors.wiki.ti.com/index.php/CC2650_SensorTag_User%27s_Guide#Building_the_SensorTag_Firmware" title="user guide" target="_blank">user guide</a>:<br>1. Import the SensorTag project in CCS (C:\ti\simplelink\ble_sdk_2_02_01_18\examples\<a class="internal-link folder tool" rel="nofollow noreferrer" target="_blank" href="https://www.ti.com/tool/CC2650STK" title="Tool Folder">cc2650stk</a>\sensortag\ccs)<br>2. Import BIM project in CCS (C:\ti\simplelink\ble_sdk_2_02_01_18\examples\util\bim_extflash\<a class="internal-link folder product" rel="nofollow noreferrer" target="_blank" href="https://www.ti.com/product/CC2640" title="Product Folder">cc2640</a>\ccs)<br>3. Build the BIM_extflash project [FlashOnly_ST Configuration]<br>4. Build the Stack project [FlashROM Configuration]<br>5. Build the Application project [FlashOnlyOAD Configuration]<br>6. Generate de super hex file:<br>C:\Python27\Scripts&gt;python hexmerge.py -o sensortag_super.hex -r 0000:1FFFF sensortag_<a class="internal-link folder tool" rel="nofollow noreferrer" target="_blank" href="https://www.ti.com/tool/CC2650STK" title="Tool Folder">cc2650stk</a>_app.hex:0000:1EFFF sensortag_<a class="internal-link folder tool" rel="nofollow noreferrer" target="_blank" href="https://www.ti.com/tool/CC2650STK" title="Tool Folder">cc2650stk</a>_stack.hex bim_extflash.hex:0000:1FFFF --overlap=error<br>I have tried with the values of <a href="http://e2e.ti.com/support/wireless_connectivity/bluetooth_low_energy/f/538/p/451277/1668563#1668563" title="this thread" target="_blank">this thread</a>:<br>7. Program de sensortag with Smart Flash 2. The process finishes well but the sensor does not work.<br>I have tried with “Erase All unprotected pages” and “Erase Pages in image”.</p>
+<p><a href="http://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/538/flashCC2650.PNG"><img src="./flash_SensorTag_hex_files/flashCC2650.PNG-1230x0.png" alt=" "></a></p>
+<p>I have tried with different advices of this community but nothing work. I am very desperate. Somebody could help me? Thank you very much.</p><div style="clear:both;"></div>
+			</div>
+									
+		</div>
+
+				
+				
+									<div class="content-tags">
+					<ul class="tag-list">
+															<li class="tag-item">
+						<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/tags/_2300_%2bBLE%2bStack%2b2-2"># BLE Stack 2.2</a>
+					</li>
+																			<li class="tag-item">
+						<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/tags/_2300_%2bandroid"># android</a>
+					</li>
+																			<li class="tag-item">
+						<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/tags/_2300_%2b2650"># 2650</a>
+					</li>
+																			<li class="tag-item">
+						<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/tags/_2300_%2bble%2bsdk"># ble sdk</a>
+					</li>
+																			<li class="tag-item">
+						<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/tags/CC2650">CC2650</a>
+					</li>
+																			<li class="tag-item">
+						<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/tags/_2300_%2b%2bCC2650">#  CC2650</a>
+					</li>
+																			<li class="tag-item">
+						<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/tags/_2300_%2bBLE%2bStack"># BLE Stack</a>
+					</li>
+																			<li class="tag-item">
+						<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/tags/CC2650STK">CC2650STK</a>
+					</li>
+																			<li class="tag-item">
+						<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/tags/code%2bComposer%2bstudio">code Composer studio</a>
+					</li>
+																			<li class="tag-item">
+						<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/tags/_2300_%2bBluetooth%2bLow%2benergy%2b_2300_firmware_2300_CC2650"># Bluetooth Low energy #firmware#CC2650</a>
+					</li>
+																			<li class="tag-item">
+						<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/tags/_2300_%2bBLE"># BLE</a>
+					</li>
+																			<li class="tag-item">
+						<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/tags/_2300_%2b%2bCC2650%2b_2300_%2bLED">#  CC2650 # LED</a>
+					</li>
+																			<li class="tag-item">
+						<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/tags/CC2640">CC2640</a>
+					</li>
+																			<li class="tag-item">
+						<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/tags/_2300_%2bapplication"># application</a>
+					</li>
+																			<li class="tag-item">
+						<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/tags/_2300_%2bBIM"># BIM</a>
+					</li>
+												</ul>
+				</div>
+					
+							<div class="author footer">
+  <div class="user-icons">
+    <span class="rank-icon">
+                  <div style="background: url(&#39;/cfs-filesystemfile/__key/communityserver-components-ranks/00-00-00-00-01/icon_5F00_prodigy.gif&#39;) no-repeat" class="rank-image">
+        <a onclick="self.location=&#39;/support/site-support/f/1024/t/691964&#39;;return false" title="Click here for explanation of levels" href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/594826?CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file">
+          <span class="rank-name">Prodigy</span>
+        </a><span class="rank-points">40</span> points
+      </div>
+          </span>
+    <span class="role-icon">
+            <img align="absbottom" src="./flash_SensorTag_hex_files/communitymember.gif">
+    </span>
+  </div>
+	<span class="user-name">
+					<a href="http://e2e.ti.com/members/4913242" class="internal-link view-user-profile">
+				user4913242
+			</a>
+					</span>
+	<div class="avatar">
+					<a href="http://e2e.ti.com/members/4913242">
+				<img src="./flash_SensorTag_hex_files/default.png-32x32x2.png" border="0" alt="user4913242">
+			</a>
+			</div>
+</div>
+
+
+<div class="actions footer">
+	
+								
+	
+	<div class="navigation-list" data-minlinks="2" data-direction="horizontal" data-maxlinks="2" id="fragment-320995_postActions-aeae7bc2-25c8-40b1-a54b-b8d528c8e855" style="overflow: hidden; height: 25px;"><div class="container" style="overflow: auto hidden; height: 45px;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 314px; visibility: visible;"><li class="navigation-list-item date" style="display: inline;"><span class="attribute-value" style="float: left;">
+					<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/594826">May 11, 2017 2:19 PM</a>
+				</span></li><li class="navigation-list-item" style="display: inline;"><span style="float: left;">Locked</span></li></ul></div></div>
+</div>
+
+
+		
+			</div>
+	
+
+
+			<ul class="filter margin-bottom margin-top" id="fragment-320995_filters">
+			<li class="filter-option  selected ">
+				<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/594826?CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file#" data-messagename="telligent.evolution.widgets.thread.answerfilter" data-filter="all">All Responses</a>
+			</li>
+			<li class="filter-option ">
+				<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/594826?CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file#" data-messagename="telligent.evolution.widgets.thread.answerfilter" data-filter="answers">Suggested Answers</a>
+			</li>
+		</ul>
+
+			
+	<ul class="content-list content margin-bottom">
+		
+
+
+
+
+	<li class="content-item ">
+	<div class="content full" id="2186576">
+
+					<div class="author header">
+  <div class="user-icons">
+    <span class="rank-icon">
+                  <div style="background: url(&#39;/cfs-filesystemfile/__key/communityserver-components-ranks/00-00-00-00-06/icon_5F00_guru.gif&#39;) no-repeat" class="rank-image">
+        <a onclick="self.location=&#39;/support/site-support/f/1024/t/691964&#39;;return false" title="Click here for explanation of levels" href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/594826?CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file">
+          <span class="rank-name">Guru</span>
+        </a><span class="rank-points">658250</span> points
+      </div>
+          </span>
+    <span class="role-icon">
+            <img align="absbottom" src="./flash_SensorTag_hex_files/communitymember.gif">
+    </span>
+  </div>
+	<span class="user-name">
+					<a href="http://e2e.ti.com/members/1482894" class="internal-link view-user-profile">
+				YiKai Chen
+			</a>
+					</span>
+  <div class="avatar">
+					<a href="http://e2e.ti.com/members/1482894">
+				<img src="./flash_SensorTag_hex_files/4TP6LTNET3SM.png-32x32x2.png" border="0" alt="YiKai Chen">
+			</a>
+			</div>
+</div>
+
+
+<div class="actions header">
+	<div class="navigation-list" data-minlinks="2" data-direction="horizontal" data-maxlinks="2" style="overflow: hidden; height: 25px;"><div class="container" style="overflow: auto hidden; height: 45px;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 291px; visibility: visible;"><li class="navigation-list-item date" style="display: inline;"><span class="attribute-value" style="float: left;">
+					<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/p/594826/2186576#2186576">May 11, 2017 2:32 PM</a>
+				</span></li></ul></div></div>
+</div>
+
+		
+		
+		
+				
+		<div class="content">
+						<div id="fragment-320995_postBody887a6bb3-5ffc-49a9-8a9b-dcca3ca8375a">
+				When you build those hex files, do you use TI ARM Compiler v5.2.6 in CCS?<div style="clear:both;"></div>
+			</div>
+									<p></p>
+<p><em>If my post answers your question, please click on&nbsp;"</em><span style="color:#00ff00;"><strong>This Resolved my issue</strong><em><span style="color:#000000;">" button to benefit others who have the same issue.</span><br></em></span></p>
+<p><strong><span style="color:#0000ff;"><a href="http://sunmaysky.blogspot.tw/"><span style="color:#0000ff;"><em>YK Chen</em></span></a></span></strong></p>
+<p><strong><span style="color:#0000ff;"><span style="color:#0000ff;"><em><a href="http://www.climax.com.tw/"><img src="./flash_SensorTag_hex_files/climax-ces2020.png-1230x0.png" alt=" "></a><br></em></span></span></strong></p>
+<p><span style="text-decoration:underline;color:#ff0000;"><em><span style="text-decoration:underline;"><a href="https://sunmaysky.blogspot.com/"><span style="color:#ff0000;text-decoration:underline;">Example to combine rfWakeOnRadioRx into rfWakeOnRadioTx to do TX/RX in the same WOR project.</span></a></span></em></span></p>
+<p><a href="https://sunmaysky.blogspot.com/2019/10/how-to-create-micro-second-delay-on.html"><span style="text-decoration:underline;"><span style="color:#ff0000;"><em><span style="color:#ff0000;text-decoration:underline;">How to create micro second delay on CC2652R</span></em></span></span></a></p>
+<p><a href="https://sunmaysky.blogspot.com/2019/05/how-to-check-aps-ack-in-ti-z-stack.html"><span style="text-decoration:underline;"><span style="color:#ff0000;"><em><span style="color:#ff0000;text-decoration:underline;">How to check APS ack in TI Z-Stack</span></em></span></span></a></p>
+<p><span style="text-decoration:underline;"><span style="color:#ff0000;"><em><a href="https://sunmaysky.blogspot.com/2018/12/how-to-detect-buttont-hold-in-cc26x2.html"><span style="color:#ff0000;text-decoration:underline;">How to detect button hold in CC26x2, CC13x0, CC13x2 SDK.</span></a> </em></span></span></p>
+<p><span style="text-decoration:underline;color:#ff0000;"><em><span style="text-decoration:underline;"><span style="text-decoration:underline;"><span style="text-decoration:underline;"><span style="text-decoration:underline;"><a href="https://sunmaysky.blogspot.com/2018/07/400-zigbee-devices-in-same-zigbee_29.html"><span style="color:#ff0000;text-decoration:underline;">660 Zigbee devices in the same Zigbee network!</span></a> </span></span></span></span></em></span></p>
+<p><span style="text-decoration:underline;color:#ff0000;"><em><span style="text-decoration:underline;"><span style="text-decoration:underline;"><span style="text-decoration:underline;"><a href="https://sunmaysky.blogspot.tw/2018/04/how-to-setup-mosquitto-on-raspberry-pi.html"><span style="color:#ff0000;text-decoration:underline;">How to setup Mosquitto on Raspberry Pi and make Contiki/Contiki-NG cc26xx-web-demo do mqtt publish to it</span></a>.</span></span></span></em></span></p>
+<p><a href="https://sunmaysky.blogspot.tw/2018/04/how-to-connect-contiki-ng-cc26xx-web.html"><span style="text-decoration:underline;color:#ff0000;"><em><span style="text-decoration:underline;"><span style="text-decoration:underline;"><span style="text-decoration:underline;color:#ff0000;">How to connect Contiki-NG cc26xx-web-demo to IBM Watson IoT Platform</span></span></span></em></span></a></p>
+		</div>
+
+				
+				
+		
+							<div class="actions footer">
+	
+	
+	
+
+						
+	
+
+  <div class="navigation-list" data-minlinks="1" data-direction="horizontal" data-maxlinks="1" id="fragment-320995_postActions-887a6bb3-5ffc-49a9-8a9b-dcca3ca8375a" style="overflow: hidden;"><div class="container" style="overflow: auto hidden;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 868px; visibility: visible;"><li class="navigation-list-item" style="display: inline;"><span style="float: left;">Locked</span></li></ul></div></div>
+	<div class="after-verify" style="display: none;">
+		<h4>Do you have another question?</h4>
+		<p>We are glad that we were able to resolve this issue, and will now proceed to close this thread.</p>
+		<p>If you have further questions related to this thread, you may click "Ask a related question" below. The newly created question will be automatically linked to this question.</p>
+		<div class="question-links">
+			<a href="http://e2e.ti.com/p/addpost?rt=594826" class="ask-related">Ask a related question</a>
+			<a href="http://e2e.ti.com/p/addpost?fn=538" class="ask-new">Ask a new question</a>
+		</div>
+	</div>
+</div>
+
+		
+			</div>
+
+		
+
+
+
+
+	</li><li class="content-item ">
+	<div class="content full" id="2186592">
+
+					<div class="author header">
+  <div class="user-icons">
+    <span class="rank-icon">
+                  <div style="background: url(&#39;/cfs-filesystemfile/__key/communityserver-components-ranks/00-00-00-00-01/icon_5F00_prodigy.gif&#39;) no-repeat" class="rank-image">
+        <a onclick="self.location=&#39;/support/site-support/f/1024/t/691964&#39;;return false" title="Click here for explanation of levels" href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/594826?CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file">
+          <span class="rank-name">Prodigy</span>
+        </a><span class="rank-points">40</span> points
+      </div>
+          </span>
+    <span class="role-icon">
+            <img align="absbottom" src="./flash_SensorTag_hex_files/communitymember.gif">
+    </span>
+  </div>
+	<span class="user-name">
+					<a href="http://e2e.ti.com/members/4913242" class="internal-link view-user-profile">
+				user4913242
+			</a>
+					</span>
+  <div class="avatar">
+					<a href="http://e2e.ti.com/members/4913242">
+				<img src="./flash_SensorTag_hex_files/default.png-32x32x2.png" border="0" alt="user4913242">
+			</a>
+			</div>
+</div>
+
+
+<div class="actions header">
+	<div class="navigation-list" data-minlinks="2" data-direction="horizontal" data-maxlinks="2" style="overflow: hidden; height: 25px;"><div class="container" style="overflow: auto hidden; height: 45px;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 291px; visibility: visible;"><li class="navigation-list-item date" style="display: inline;"><span class="attribute-value" style="float: left;">
+					<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/p/594826/2186592#2186592">May 11, 2017 2:42 PM</a>
+				</span></li></ul></div></div>
+</div>
+
+		
+		
+		
+				
+		<div class="content">
+																		<p class="in-reply-to">In reply to <a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/p/594826/2186576#2186576">YiKai Chen</a>:</p>
+															<div id="fragment-320995_postBodyb6a9fbb8-1c3e-4e59-986b-83f5d983592e">
+				<p>Yes:</p>
+<p><a href="http://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/538/8321.compilerversion.PNG"><img src="./flash_SensorTag_hex_files/8321.compilerversion.PNG-1230x0.png" alt=" "></a></p><div style="clear:both;"></div>
+			</div>
+									
+		</div>
+
+				
+				
+		
+							<div class="actions footer">
+	
+	
+	
+
+						
+	
+
+  <div class="navigation-list" data-minlinks="1" data-direction="horizontal" data-maxlinks="1" id="fragment-320995_postActions-b6a9fbb8-1c3e-4e59-986b-83f5d983592e" style="overflow: hidden;"><div class="container" style="overflow: auto hidden;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 868px; visibility: visible;"><li class="navigation-list-item" style="display: inline;"><span style="float: left;">Locked</span></li></ul></div></div>
+	<div class="after-verify" style="display: none;">
+		<h4>Do you have another question?</h4>
+		<p>We are glad that we were able to resolve this issue, and will now proceed to close this thread.</p>
+		<p>If you have further questions related to this thread, you may click "Ask a related question" below. The newly created question will be automatically linked to this question.</p>
+		<div class="question-links">
+			<a href="http://e2e.ti.com/p/addpost?rt=594826" class="ask-related">Ask a related question</a>
+			<a href="http://e2e.ti.com/p/addpost?fn=538" class="ask-new">Ask a new question</a>
+		</div>
+	</div>
+</div>
+
+		
+			</div>
+
+		
+
+
+
+
+	</li><li class="content-item verified">
+	<div class="content full" id="2186619">
+
+					<div class="author header">
+  <div class="user-icons">
+    <span class="rank-icon">
+                  <div style="background: url(&#39;/cfs-filesystemfile/__key/communityserver-components-ranks/00-00-00-00-06/icon_5F00_guru.gif&#39;) no-repeat" class="rank-image">
+        <a onclick="self.location=&#39;/support/site-support/f/1024/t/691964&#39;;return false" title="Click here for explanation of levels" href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/594826?CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file">
+          <span class="rank-name">Guru</span>
+        </a><span class="rank-points">658250</span> points
+      </div>
+          </span>
+    <span class="role-icon">
+            <img align="absbottom" src="./flash_SensorTag_hex_files/communitymember.gif">
+    </span>
+  </div>
+	<span class="user-name">
+					<a href="http://e2e.ti.com/members/1482894" class="internal-link view-user-profile">
+				YiKai Chen
+			</a>
+					</span>
+  <div class="avatar">
+					<a href="http://e2e.ti.com/members/1482894">
+				<img src="./flash_SensorTag_hex_files/4TP6LTNET3SM.png-32x32x2.png" border="0" alt="YiKai Chen">
+			</a>
+			</div>
+</div>
+
+
+<div class="actions header">
+	<div class="navigation-list" data-minlinks="2" data-direction="horizontal" data-maxlinks="2" style="overflow: hidden; height: 25px;"><div class="container" style="overflow: auto hidden; height: 45px;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 291px; visibility: visible;"><li class="navigation-list-item date" style="display: inline;"><span class="attribute-value" style="float: left;">
+					<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/p/594826/2186619#2186619">May 11, 2017 2:50 PM</a>
+				</span></li></ul></div></div>
+</div>
+
+		
+		
+		
+				
+		<div class="content">
+																		<p class="in-reply-to">In reply to <a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/p/594826/2186592#2186592">user4913242</a>:</p>
+															<div id="fragment-320995_postBodyb87d0b30-db48-48fe-9109-d239f9dca4cd">
+				<p>The compiler version seems strange. Mime is like the following screen shot.</p>
+<p><a href="http://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/538/6266.COMPILER-v5.2.6.jpg"><img src="./flash_SensorTag_hex_files/6266.COMPILER v5.2.6.jpg-1230x0.jpg" alt=" "></a></p><div style="clear:both;"></div>
+			</div>
+									<p></p>
+<p><em>If my post answers your question, please click on&nbsp;"</em><span style="color:#00ff00;"><strong>This Resolved my issue</strong><em><span style="color:#000000;">" button to benefit others who have the same issue.</span><br></em></span></p>
+<p><strong><span style="color:#0000ff;"><a href="http://sunmaysky.blogspot.tw/"><span style="color:#0000ff;"><em>YK Chen</em></span></a></span></strong></p>
+<p><strong><span style="color:#0000ff;"><span style="color:#0000ff;"><em><a href="http://www.climax.com.tw/"><img src="./flash_SensorTag_hex_files/climax-ces2020.png-1230x0.png" alt=" "></a><br></em></span></span></strong></p>
+<p><span style="text-decoration:underline;color:#ff0000;"><em><span style="text-decoration:underline;"><a href="https://sunmaysky.blogspot.com/"><span style="color:#ff0000;text-decoration:underline;">Example to combine rfWakeOnRadioRx into rfWakeOnRadioTx to do TX/RX in the same WOR project.</span></a></span></em></span></p>
+<p><a href="https://sunmaysky.blogspot.com/2019/10/how-to-create-micro-second-delay-on.html"><span style="text-decoration:underline;"><span style="color:#ff0000;"><em><span style="color:#ff0000;text-decoration:underline;">How to create micro second delay on CC2652R</span></em></span></span></a></p>
+<p><a href="https://sunmaysky.blogspot.com/2019/05/how-to-check-aps-ack-in-ti-z-stack.html"><span style="text-decoration:underline;"><span style="color:#ff0000;"><em><span style="color:#ff0000;text-decoration:underline;">How to check APS ack in TI Z-Stack</span></em></span></span></a></p>
+<p><span style="text-decoration:underline;"><span style="color:#ff0000;"><em><a href="https://sunmaysky.blogspot.com/2018/12/how-to-detect-buttont-hold-in-cc26x2.html"><span style="color:#ff0000;text-decoration:underline;">How to detect button hold in CC26x2, CC13x0, CC13x2 SDK.</span></a> </em></span></span></p>
+<p><span style="text-decoration:underline;color:#ff0000;"><em><span style="text-decoration:underline;"><span style="text-decoration:underline;"><span style="text-decoration:underline;"><span style="text-decoration:underline;"><a href="https://sunmaysky.blogspot.com/2018/07/400-zigbee-devices-in-same-zigbee_29.html"><span style="color:#ff0000;text-decoration:underline;">660 Zigbee devices in the same Zigbee network!</span></a> </span></span></span></span></em></span></p>
+<p><span style="text-decoration:underline;color:#ff0000;"><em><span style="text-decoration:underline;"><span style="text-decoration:underline;"><span style="text-decoration:underline;"><a href="https://sunmaysky.blogspot.tw/2018/04/how-to-setup-mosquitto-on-raspberry-pi.html"><span style="color:#ff0000;text-decoration:underline;">How to setup Mosquitto on Raspberry Pi and make Contiki/Contiki-NG cc26xx-web-demo do mqtt publish to it</span></a>.</span></span></span></em></span></p>
+<p><a href="https://sunmaysky.blogspot.tw/2018/04/how-to-connect-contiki-ng-cc26xx-web.html"><span style="text-decoration:underline;color:#ff0000;"><em><span style="text-decoration:underline;"><span style="text-decoration:underline;"><span style="text-decoration:underline;color:#ff0000;">How to connect Contiki-NG cc26xx-web-demo to IBM Watson IoT Platform</span></span></span></em></span></a></p>
+		</div>
+
+				
+				
+		
+							<div class="actions footer">
+	
+	
+	
+
+						
+	
+
+  <div class="navigation-list" data-minlinks="1" data-direction="horizontal" data-maxlinks="1" id="fragment-320995_postActions-b87d0b30-db48-48fe-9109-d239f9dca4cd" style="overflow: hidden;"><div class="container" style="overflow: auto hidden;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 868px; visibility: visible;"><li class="navigation-list-item" style="display: inline;"><span style="float: left;">Locked</span></li></ul></div></div>
+	<div class="after-verify" style="display: none;">
+		<h4>Do you have another question?</h4>
+		<p>We are glad that we were able to resolve this issue, and will now proceed to close this thread.</p>
+		<p>If you have further questions related to this thread, you may click "Ask a related question" below. The newly created question will be automatically linked to this question.</p>
+		<div class="question-links">
+			<a href="http://e2e.ti.com/p/addpost?rt=594826" class="ask-related">Ask a related question</a>
+			<a href="http://e2e.ti.com/p/addpost?fn=538" class="ask-new">Ask a new question</a>
+		</div>
+	</div>
+</div>
+
+		
+			</div>
+
+		
+
+
+
+
+	</li><li class="content-item ">
+	<div class="content full" id="2186644">
+
+					<div class="author header">
+  <div class="user-icons">
+    <span class="rank-icon">
+                  <div style="background: url(&#39;/cfs-filesystemfile/__key/communityserver-components-ranks/00-00-00-00-01/icon_5F00_prodigy.gif&#39;) no-repeat" class="rank-image">
+        <a onclick="self.location=&#39;/support/site-support/f/1024/t/691964&#39;;return false" title="Click here for explanation of levels" href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/594826?CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file">
+          <span class="rank-name">Prodigy</span>
+        </a><span class="rank-points">40</span> points
+      </div>
+          </span>
+    <span class="role-icon">
+            <img align="absbottom" src="./flash_SensorTag_hex_files/communitymember.gif">
+    </span>
+  </div>
+	<span class="user-name">
+					<a href="http://e2e.ti.com/members/4913242" class="internal-link view-user-profile">
+				user4913242
+			</a>
+					</span>
+  <div class="avatar">
+					<a href="http://e2e.ti.com/members/4913242">
+				<img src="./flash_SensorTag_hex_files/default.png-32x32x2.png" border="0" alt="user4913242">
+			</a>
+			</div>
+</div>
+
+
+<div class="actions header">
+	<div class="navigation-list" data-minlinks="2" data-direction="horizontal" data-maxlinks="2" style="overflow: hidden; height: 25px;"><div class="container" style="overflow: auto hidden; height: 45px;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 291px; visibility: visible;"><li class="navigation-list-item date" style="display: inline;"><span class="attribute-value" style="float: left;">
+					<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/p/594826/2186644#2186644">May 11, 2017 3:08 PM</a>
+				</span></li></ul></div></div>
+</div>
+
+		
+		
+		
+				
+		<div class="content">
+																		<p class="in-reply-to">In reply to <a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/p/594826/2186619#2186619">YiKai Chen</a>:</p>
+															<div id="fragment-320995_postBody51234b60-5fef-4dd4-ac73-d1a32dc012a7">
+				<p>I don't have that version. When you asked me, I noticed the warning and I changed compiler version to "TI v16.9.0.LTS". The warning has disappeared but is still not working. Now I have tried to put the version "TI v5.2.6" again but it does not appear anymore ... Do I have to download some package?</p>
+<p><a href="http://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/538/compilers.PNG"><img src="./flash_SensorTag_hex_files/compilers.PNG-1230x0.png" alt=" "></a></p><div style="clear:both;"></div>
+			</div>
+									
+		</div>
+
+				
+				
+		
+							<div class="actions footer">
+	
+	
+	
+
+						
+	
+
+  <div class="navigation-list" data-minlinks="1" data-direction="horizontal" data-maxlinks="1" id="fragment-320995_postActions-51234b60-5fef-4dd4-ac73-d1a32dc012a7" style="overflow: hidden;"><div class="container" style="overflow: auto hidden;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 868px; visibility: visible;"><li class="navigation-list-item" style="display: inline;"><span style="float: left;">Locked</span></li></ul></div></div>
+	<div class="after-verify" style="display: none;">
+		<h4>Do you have another question?</h4>
+		<p>We are glad that we were able to resolve this issue, and will now proceed to close this thread.</p>
+		<p>If you have further questions related to this thread, you may click "Ask a related question" below. The newly created question will be automatically linked to this question.</p>
+		<div class="question-links">
+			<a href="http://e2e.ti.com/p/addpost?rt=594826" class="ask-related">Ask a related question</a>
+			<a href="http://e2e.ti.com/p/addpost?fn=538" class="ask-new">Ask a new question</a>
+		</div>
+	</div>
+</div>
+
+		
+			</div>
+
+		
+
+
+
+
+	</li><li class="content-item verified">
+	<div class="content full" id="2186653">
+
+					<div class="author header">
+  <div class="user-icons">
+    <span class="rank-icon">
+                  <div style="background: url(&#39;/cfs-filesystemfile/__key/communityserver-components-ranks/00-00-00-00-06/icon_5F00_guru.gif&#39;) no-repeat" class="rank-image">
+        <a onclick="self.location=&#39;/support/site-support/f/1024/t/691964&#39;;return false" title="Click here for explanation of levels" href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/594826?CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file">
+          <span class="rank-name">Guru</span>
+        </a><span class="rank-points">658250</span> points
+      </div>
+          </span>
+    <span class="role-icon">
+            <img align="absbottom" src="./flash_SensorTag_hex_files/communitymember.gif">
+    </span>
+  </div>
+	<span class="user-name">
+					<a href="http://e2e.ti.com/members/1482894" class="internal-link view-user-profile">
+				YiKai Chen
+			</a>
+					</span>
+  <div class="avatar">
+					<a href="http://e2e.ti.com/members/1482894">
+				<img src="./flash_SensorTag_hex_files/4TP6LTNET3SM.png-32x32x2.png" border="0" alt="YiKai Chen">
+			</a>
+			</div>
+</div>
+
+
+<div class="actions header">
+	<div class="navigation-list" data-minlinks="2" data-direction="horizontal" data-maxlinks="2" style="overflow: hidden; height: 25px;"><div class="container" style="overflow: auto hidden; height: 45px;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 291px; visibility: visible;"><li class="navigation-list-item date" style="display: inline;"><span class="attribute-value" style="float: left;">
+					<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/p/594826/2186653#2186653">May 11, 2017 3:13 PM</a>
+				</span></li></ul></div></div>
+</div>
+
+		
+		
+		
+				
+		<div class="content">
+																		<p class="in-reply-to">In reply to <a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/p/594826/2186644#2186644">user4913242</a>:</p>
+															<div id="fragment-320995_postBody76425bfc-a507-4ea2-a193-b5d7867ce1ca">
+				You can refer to discussions in <a href="https://e2e.ti.com/support/development_tools/compiler/f/343/t/496572">e2e.ti.com/.../496572</a> which shows you how to install TI ARM Compiler v5.2.6 in CCS.<div style="clear:both;"></div>
+			</div>
+									<p></p>
+<p><em>If my post answers your question, please click on&nbsp;"</em><span style="color:#00ff00;"><strong>This Resolved my issue</strong><em><span style="color:#000000;">" button to benefit others who have the same issue.</span><br></em></span></p>
+<p><strong><span style="color:#0000ff;"><a href="http://sunmaysky.blogspot.tw/"><span style="color:#0000ff;"><em>YK Chen</em></span></a></span></strong></p>
+<p><strong><span style="color:#0000ff;"><span style="color:#0000ff;"><em><a href="http://www.climax.com.tw/"><img src="./flash_SensorTag_hex_files/climax-ces2020.png-1230x0.png" alt=" "></a><br></em></span></span></strong></p>
+<p><span style="text-decoration:underline;color:#ff0000;"><em><span style="text-decoration:underline;"><a href="https://sunmaysky.blogspot.com/"><span style="color:#ff0000;text-decoration:underline;">Example to combine rfWakeOnRadioRx into rfWakeOnRadioTx to do TX/RX in the same WOR project.</span></a></span></em></span></p>
+<p><a href="https://sunmaysky.blogspot.com/2019/10/how-to-create-micro-second-delay-on.html"><span style="text-decoration:underline;"><span style="color:#ff0000;"><em><span style="color:#ff0000;text-decoration:underline;">How to create micro second delay on CC2652R</span></em></span></span></a></p>
+<p><a href="https://sunmaysky.blogspot.com/2019/05/how-to-check-aps-ack-in-ti-z-stack.html"><span style="text-decoration:underline;"><span style="color:#ff0000;"><em><span style="color:#ff0000;text-decoration:underline;">How to check APS ack in TI Z-Stack</span></em></span></span></a></p>
+<p><span style="text-decoration:underline;"><span style="color:#ff0000;"><em><a href="https://sunmaysky.blogspot.com/2018/12/how-to-detect-buttont-hold-in-cc26x2.html"><span style="color:#ff0000;text-decoration:underline;">How to detect button hold in CC26x2, CC13x0, CC13x2 SDK.</span></a> </em></span></span></p>
+<p><span style="text-decoration:underline;color:#ff0000;"><em><span style="text-decoration:underline;"><span style="text-decoration:underline;"><span style="text-decoration:underline;"><span style="text-decoration:underline;"><a href="https://sunmaysky.blogspot.com/2018/07/400-zigbee-devices-in-same-zigbee_29.html"><span style="color:#ff0000;text-decoration:underline;">660 Zigbee devices in the same Zigbee network!</span></a> </span></span></span></span></em></span></p>
+<p><span style="text-decoration:underline;color:#ff0000;"><em><span style="text-decoration:underline;"><span style="text-decoration:underline;"><span style="text-decoration:underline;"><a href="https://sunmaysky.blogspot.tw/2018/04/how-to-setup-mosquitto-on-raspberry-pi.html"><span style="color:#ff0000;text-decoration:underline;">How to setup Mosquitto on Raspberry Pi and make Contiki/Contiki-NG cc26xx-web-demo do mqtt publish to it</span></a>.</span></span></span></em></span></p>
+<p><a href="https://sunmaysky.blogspot.tw/2018/04/how-to-connect-contiki-ng-cc26xx-web.html"><span style="text-decoration:underline;color:#ff0000;"><em><span style="text-decoration:underline;"><span style="text-decoration:underline;"><span style="text-decoration:underline;color:#ff0000;">How to connect Contiki-NG cc26xx-web-demo to IBM Watson IoT Platform</span></span></span></em></span></a></p>
+		</div>
+
+				
+				
+		
+							<div class="actions footer">
+	
+	
+	
+
+						
+	
+
+  <div class="navigation-list" data-minlinks="1" data-direction="horizontal" data-maxlinks="1" id="fragment-320995_postActions-76425bfc-a507-4ea2-a193-b5d7867ce1ca" style="overflow: hidden;"><div class="container" style="overflow: auto hidden;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 868px; visibility: visible;"><li class="navigation-list-item" style="display: inline;"><span style="float: left;">Locked</span></li></ul></div></div>
+	<div class="after-verify" style="display: none;">
+		<h4>Do you have another question?</h4>
+		<p>We are glad that we were able to resolve this issue, and will now proceed to close this thread.</p>
+		<p>If you have further questions related to this thread, you may click "Ask a related question" below. The newly created question will be automatically linked to this question.</p>
+		<div class="question-links">
+			<a href="http://e2e.ti.com/p/addpost?rt=594826" class="ask-related">Ask a related question</a>
+			<a href="http://e2e.ti.com/p/addpost?fn=538" class="ask-new">Ask a new question</a>
+		</div>
+	</div>
+</div>
+
+		
+			</div>
+
+		
+
+
+
+
+	</li><li class="content-item ">
+	<div class="content full" id="2186687">
+
+					<div class="author header">
+  <div class="user-icons">
+    <span class="rank-icon">
+                  <div style="background: url(&#39;/cfs-filesystemfile/__key/communityserver-components-ranks/00-00-00-00-01/icon_5F00_prodigy.gif&#39;) no-repeat" class="rank-image">
+        <a onclick="self.location=&#39;/support/site-support/f/1024/t/691964&#39;;return false" title="Click here for explanation of levels" href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/594826?CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file">
+          <span class="rank-name">Prodigy</span>
+        </a><span class="rank-points">40</span> points
+      </div>
+          </span>
+    <span class="role-icon">
+            <img align="absbottom" src="./flash_SensorTag_hex_files/communitymember.gif">
+    </span>
+  </div>
+	<span class="user-name">
+					<a href="http://e2e.ti.com/members/4913242" class="internal-link view-user-profile">
+				user4913242
+			</a>
+					</span>
+  <div class="avatar">
+					<a href="http://e2e.ti.com/members/4913242">
+				<img src="./flash_SensorTag_hex_files/default.png-32x32x2.png" border="0" alt="user4913242">
+			</a>
+			</div>
+</div>
+
+
+<div class="actions header">
+	<div class="navigation-list" data-minlinks="2" data-direction="horizontal" data-maxlinks="2" style="overflow: hidden; height: 25px;"><div class="container" style="overflow: auto hidden; height: 45px;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 291px; visibility: visible;"><li class="navigation-list-item date" style="display: inline;"><span class="attribute-value" style="float: left;">
+					<a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/p/594826/2186687#2186687">May 11, 2017 3:28 PM</a>
+				</span></li></ul></div></div>
+</div>
+
+		
+		
+		
+				
+		<div class="content">
+																		<p class="in-reply-to">In reply to <a href="http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/p/594826/2186653#2186653">YiKai Chen</a>:</p>
+															<div id="fragment-320995_postBody26363b5b-e95b-4443-b044-566446ac6fcf">
+				Thank you very much!!! After a whole week trying to solve the problem, now it works thanks to you. It was by the compiler version!!! Thank you!!<div style="clear:both;"></div>
+			</div>
+									
+		</div>
+
+				
+				
+		
+							<div class="actions footer">
+	
+	
+	
+
+						
+	
+
+  <div class="navigation-list" data-minlinks="1" data-direction="horizontal" data-maxlinks="1" id="fragment-320995_postActions-26363b5b-e95b-4443-b044-566446ac6fcf" style="overflow: hidden;"><div class="container" style="overflow: auto hidden;"><ul style="list-style: none; padding: 0px; margin: 0px; overflow: hidden; width: 868px; visibility: visible;"><li class="navigation-list-item" style="display: inline;"><span style="float: left;">Locked</span></li></ul></div></div>
+	<div class="after-verify" style="display: none;">
+		<h4>Do you have another question?</h4>
+		<p>We are glad that we were able to resolve this issue, and will now proceed to close this thread.</p>
+		<p>If you have further questions related to this thread, you may click "Ask a related question" below. The newly created question will be automatically linked to this question.</p>
+		<div class="question-links">
+			<a href="http://e2e.ti.com/p/addpost?rt=594826" class="ask-related">Ask a related question</a>
+			<a href="http://e2e.ti.com/p/addpost?fn=538" class="ask-new">Ask a new question</a>
+		</div>
+	</div>
+</div>
+
+		
+			</div>
+
+	</li></ul>
+		<div class="locked-banner">
+		<p>This thread has been locked.</p>
+		<p>If you have a related question, please click the "<a href="http://e2e.ti.com/p/addpost?rt=594826">Ask a related question</a>" button in the top right corner. The newly created question will be automatically linked to this question.</p>
+	</div>
+
+
+	<div class="pager ui-page" data-currentpage="0" data-pagesize="10" data-totalitems="6" data-pagekey="pi320995" data-pagedcontenturl="/utility/scripted-file.ashx?=CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file&amp;_cf=thread.vm&amp;_fid=320995&amp;_ct=page&amp;_cp=forums-thread&amp;_ctt=c6108064af6511ddb074de1a56d89593&amp;_ctc=bc6b4f21512648579bb4bee17ee37372&amp;_ctn=decec9f8365c4a06ab6053f36924f21f&amp;_cc=0&amp;_pcurl=%7e%2fsupport%2fwireless-connectivity%2fbluetooth%2ff%2f538%2ft%2f594826%3fCCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file" data-pagedcontentwrapperid="pi320995-paged-content" data-pagedcontentpagingevent="ui.page.pi320995.paging" data-pagedcontentpagedevent="ui.page.pi320995.paged" data-loadonanyhashchange="true" data-loadingindicator="true" data-configuration="ShowIndividualPages=false&amp;ShowPrevious=true&amp;ShowNext=true&amp;PagedContentFile=thread.vm&amp;LoadOnAnyHashChange=true&amp;LoadingIndicator=true">  </div>
+</div>
+
+
+
+
+
+        
+    
+
+
+
+</div>
+<div class="content-fragment-footer"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="layout-footer"></div>
+</div></div><div class="footer-fragments-header"></div>
+<div class="footer-fragments" id="ctl05_ctl03_page"><div class="layout">
+<div class="layout-header"></div>
+<div class="layout-content content" id="ctl05_ctl03_layout">
+<div class="layout-region content" id="ctl05_ctl03_content">
+<div class="layout-region-inner content"><div class="content-fragment scripted-content-fragment no-wrapper responsive-1" id="footer-1688">
+<div class="content-fragment-content">
+
+
+
+                                                    
+
+<script language="JavaScript">
+    var subject = "CCS/CC2650STK: Unable to flash SensorTag &quot;super hex&quot; file";
+	
+			var tiPageName = 'E2E-CCSCC2650STK Unable to flash SensorTag quotsuper hexquot file-EN';
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+            			<script language="JavaScript">
+var tiContentGroup='TI E2E Community/Forums/Bluetooth/Bluetooth forum';
+</script>
+
+    
+    
+        
+    
+
+            	
+    
+	</div>
+<div class="content-fragment-footer"></div>
+</div>
+<div class="content-fragment t-i-footer no-wrapper with-spacing responsive-3" id="footer-1689">
+<div class="content-fragment-content">
+
+          
+    
+    
+  <!-- TI Footer - Start -->
+
+<div class="footertop">
+  <div class="footerLinks">
+    <div id="footerLinks_e2e">
+      <div id="home">
+        <div class="foothead">
+        TI E2E™ support forums
+        </div>
+        <ul class="footlinks">
+          <li><a href="https://e2e.ti.com/support/">Forum list</a></li>
+	  <li><a href="https://e2e.ti.com/support/site-support/f/1024">Site support</a></li>
+          <li><a href="https://e2e.ti.com/user/settings">Settings</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="footerLinks_partners">
+      <div id="home">
+        <div class="foothead">
+        Other support forums 
+        </div>
+        <ul class="footlinks">
+          <li><a href="https://e2echina.ti.com/">E2E China</a></li>
+          <li><a href="https://beagleboard.org/">beagleboard.org</a></li>
+  	 </ul>
+      </div>
+    </div>
+
+    <div id="footerLinks_other">
+      <div id="home">
+        <div class="foothead">
+	Educational resources
+	</div>
+        <ul class="footlinks">
+          <li><a href="https://training.ti.com/">TI training</a></li>
+          <li><a href="https://university.ti.com/">TI university program</a></li>
+	  </ul>
+      </div>
+    </div>
+    
+    <div id="footerLinks_other">
+      <div id="home">
+        <div class="foothead">
+        Other resources
+        </div>
+        <ul class="footlinks">
+	  <li><a href="https://www.ti.com/tools-software/design-center/webench-power-designer.html">WEBENCH® Power Designer</a></li>
+          <li><a href="https://www.ti.com/csc">Customer support center</a></li>
+	  <li><a href="https://e2e.ti.com/blogs_/">TI technical articles</a></li>
+	  </ul>
+      </div>
+    </div>
+
+  </div>
+<br clear="all">
+  <div id="disclaimer">
+  <p>All content and materials on this site are provided "as is". TI and its respective suppliers and providers of content make no representations about the suitability of these materials for any purpose and disclaim all warranties and conditions with regard to these materials, including but not limited to all implied warranties and conditions of merchantability, fitness for a particular purpose, title and non-infringement of any third party intellectual property right. No license, either express or implied, by estoppel or otherwise, is granted by TI. Use of the information on this site may require a license from a third party, or a license from TI.</p>
+  <p>Content on this site may contain or be subject to specific guidelines or limitations on use. All postings and use of the content on this site are subject to the <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> of the site; third parties using this content agree to abide by any limitations or guidelines and to comply with the <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> of this site. TI, its suppliers and providers of content reserve the right to make corrections, deletions, modifications, enhancements, improvements and other changes to the content and materials, its products, programs and services at any time or to move or discontinue any content, products, programs, or services without notice.</p>
+  </div>
+</div>
+
+<!-- Syntax Highlighter CSS autoloader code starts -->
+<link href="./flash_SensorTag_hex_files/shCore.css" rel="stylesheet" type="text/css"> 
+<link href="./flash_SensorTag_hex_files/shThemeDefault.css" rel="stylesheet" type="text/css"> 
+<script src="./flash_SensorTag_hex_files/XRegExp.js.download" type="text/javascript"></script>
+<script src="./flash_SensorTag_hex_files/shCore.js.download" type="text/javascript"></script> 
+<script src="./flash_SensorTag_hex_files/shAutoloader.js.download" type="text/javascript"></script> 
+<script type="text/javascript">
+$(document).ready(function() {
+ SyntaxHighlighter.autoloader('applescript            /tiny_mce/SyntaxHighlighter/scripts/shBrushAppleScript.js','actionscript3 as3      /tiny_mce/SyntaxHighlighter/scripts/shBrushAS3.js','bash shell             /tiny_mce/SyntaxHighlighter/scripts/shBrushBash.js','coldfusion cf          /tiny_mce/SyntaxHighlighter/scripts/shBrushColdFusion.js','cpp c                  /tiny_mce/SyntaxHighlighter/scripts/shBrushCpp.js','c# c-sharp csharp      /tiny_mce/SyntaxHighlighter/scripts/shBrushCSharp.js','css                    /tiny_mce/SyntaxHighlighter/scripts/shBrushCss.js','delphi pascal          /tiny_mce/SyntaxHighlighter/scripts/shBrushDelphi.js','diff patch pas         /tiny_mce/SyntaxHighlighter/scripts/shBrushDiff.js','erl erlang             /tiny_mce/SyntaxHighlighter/scripts/shBrushErlang.js','groovy                 /tiny_mce/SyntaxHighlighter/scripts/shBrushGroovy.js','java                   /tiny_mce/SyntaxHighlighter/scripts/shBrushJava.js','jfx javafx             /tiny_mce/SyntaxHighlighter/scripts/shBrushJavaFX.js','js jscript javascript  /tiny_mce/SyntaxHighlighter/scripts/shBrushJScript.js','perl pl                /tiny_mce/SyntaxHighlighter/scripts/shBrushPerl.js','php                    /tiny_mce/SyntaxHighlighter/scripts/shBrushPhp.js','text plain             /tiny_mce/SyntaxHighlighter/scripts/shBrushPlain.js','py python              /tiny_mce/SyntaxHighlighter/scripts/shBrushPython.js','ruby rails ror rb      /tiny_mce/SyntaxHighlighter/scripts/shBrushRuby.js','sass scss              /tiny_mce/SyntaxHighlighter/scripts/shBrushSass.js','scala                  /tiny_mce/SyntaxHighlighter/scripts/shBrushScala.js','sql                    /tiny_mce/SyntaxHighlighter/scripts/shBrushSql.js','vb vbnet               /tiny_mce/SyntaxHighlighter/scripts/shBrushVb.js','xml xhtml xslt html    /tiny_mce/SyntaxHighlighter/scripts/shBrushXml.js');
+ SyntaxHighlighter.config.stripBrs = true; 
+ SyntaxHighlighter.all();     
+});
+</script> 
+<!-- Syntax Highlighter CSS autoloader code ends -->
+
+<span id="sSC"></span>
+
+  <script language="javascript" src="./flash_SensorTag_hex_files/analytics.js(2).download" type="text/javascript"></script>
+
+<div id="footer">
+</div>
+
+
+<div id="footnote">
+<div class="container">
+
+<div style=" float:right; text-align:right;">
+
+<div class="social">
+            <span>Follow us</span>
+<span><a href="https://www.ti.com/facebook" style="color:#000;" name="&amp;lid=EN_US_footer_facebookicon"><img src="./flash_SensorTag_hex_files/follow-us-facebook.png" alt="Texas Instruments on Facebook" border="0" align="absmiddle"></a></span>
+<span><a href="https://twitter.com/txinstruments" style="color:#000;" name="&amp;lid=EN_US_footer_twittericon"><img src="./flash_SensorTag_hex_files/follow-us-twitter.png" alt="Texas Instruments on Twitter" border="0" align="absmiddle"></a></span>
+<span><a href="https://www.ti.com/linkedin" style="color:#000;" name="&amp;lid=EN_US_footer_linkedin-icon"><img src="./flash_SensorTag_hex_files/linkedin.png" alt="Texas Instruments on LinkedIn" border="0" align="absmiddle"></a></span>
+        </div>
+
+
+<div id="footerbadge" style="width:180px;"><!--<a href="https://www.ti.com/general/docs/gencontent.tsp?contentId=106103"><span style="float:left; padding:15px 0 0 0; font-size:9px;">Texas Instruments<br>is a member of</span><img src="https://www.ti.com/assets/en/images/homepage/ecia-logo-1.jpg" alt="Member of ECIA"></a>--><!--  <img src="images/picp-logo.jpg" alt="picp-logo" width="211" height="48" /> --></div>
+</div>
+
+<a href="https://www.ti.com/footer_worldwide" name="&amp;lid=EN_US_footer_worldwide">TI worldwide</a> | <a href="https://www.ti.com/footer_contact" name="&amp;lid=EN_US_footer_contactus">Contact us</a> | <a href="http://my.ti.com/" name="&amp;lid=EN_US_footer_mytilogin">myTI login</a> | <a href="https://www.ti.com/corp/docs/csr/index.shtml" name="&amp;lid=EN_US_footer_corporate_citizenship">Corporate citizenship</a>
+
+<p>TI is a global semiconductor design and manufacturing company. Innovate with 100,000+ analog ICs and<br>embedded processors, along with software, tools and the industry’s largest sales/support staff.</p>
+
+<div style="width:48%; padding-top:5px;">
+<a href="https://www.ti.com/corp/docs/legal/copyright.shtml" name="&amp;lid=EN_US_footer_websitefeedback">© Copyright 1995-2019</a> Texas Instruments Incorporated. All rights reserved.
+<br>
+<a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm" name="&amp;lid=EN_US_footer_trademarks">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml" name="&amp;lid=EN_US_footer_privacypolicy">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml" name="&amp;lid=EN_US_footer_termsofuse">Terms of Use</a>
+</div><!-- Copyright ends -->
+
+</div><!-- Footnote ends -->
+</div>
+			</div>
+<div class="content-fragment-footer"></div>
+</div>
+<div class="content-fragment scripted-content-fragment no-wrapper responsive-hidden" id="footer-1780">
+<div class="content-fragment-content">
+
+
+
+
+                                                                  
+<script type="text/javascript">
+          var tiUserGeo = {"country_code":"AU","city":"SYDNEY","continent":"OC","throughput":"","network":"","network_type":"","bw":"","proxy":"","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36","IP":"129.94.8.210", "ABM":""};
+</script>
+<div id="tiPrivacy"></div></div>
+<div class="content-fragment-footer"></div>
+</div>
+<div id="footer-1690"></div>
+<div id="footer-1691"></div>
+<div id="footer-1692"></div>
+<div id="footer-1693"></div>
+</div>
+</div>
+</div>
+<div class="layout-footer"></div>
+</div></div><div class="footer-fragments-footer"></div>
+
+
+	<script type="text/html" id="site-banner-notification-preferences-template">
+		<div class="notification-preference">
+			<span class="description">Do not notify me when someone <strong><%: notificationTypeName %></strong>?</span>
+			<a href="#" class="confirm internal-link button submit-button" data-notificationtypeid="<%: notificationTypeId %>">b2833Confirm</a>
+			<a href="#" class="cancel internal-link button submit-button">Cancel</a>
+		</div>
+	</script>
+
+
+	<script type="text/html" id="site-banner-list-template">
+		<div>
+			<div class="multiple-column-list columns-1">
+				<div class="multiple-column-item column-1">
+					<ul class="content-list content">
+					</ul>
+					<div class="loading">Loading...</div>
+					<% if(footerContent) { %>
+						<div class="content-list-footer">
+							<%= footerContent %>
+						</div>
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</script>
+
+
+	<script type="text/html" id="site-banner-bookmark-filter-template">
+
+		<ul class="navigation-list filter">
+			<% if(contentTypeIds && contentTypeIds.length > 0) { %>
+				<li class="navigation-item conversations">
+					<a class="internal-link" href="#" data-contenttypeids="<%: contentTypeIds %>">Content</a>
+				</li>
+			<% } %>
+			<% if(applicationContentTypeIds && applicationContentTypeIds.length > 0) { %>
+				<li class="navigation-item conversations">
+					<a class="internal-link" href="#" data-contenttypeids="<%: applicationContentTypeIds %>">Application</a>
+				</li>
+			<% } %>
+			<% if(containerTypes && containerTypes.length > 0) { %>
+				<% foreach(containerTypes, function(containerType) {  %>
+					<li class="navigation-item conversations">
+						<a class="internal-link" href="#" data-contenttypeids="<%: containerType.id %>"><%: containerType.name %></a>
+					</li>
+				<% }); %>
+			<% } %>
+		</ul>
+
+	</script>
+
+	<script type="text/html" id="site-banner-notification-filter-template">
+		<ul class="navigation-list filter">
+			<li class="navigation-item all">
+				<a class="internal-link" href="#" data-filter="all">All</a>
+			</li>
+			<li class="navigation-item unread">
+				<a class="internal-link" href="#" data-filter="unread">Unread</a>
+			</li>
+		</ul>
+	</script>
+
+	<script type="text/html" id="site-banner-search-filter-template">
+		<% if(places && places.length > 0) { %>
+			<ul class="navigation-list filter">
+				<% foreach(places, function(place) { %>
+					<li class="navigation-item">
+						<a class="place internal-link" href="#" data-key="<%: place.key %>" data-value="<%: place.value %>"><%= place.name %></a>
+				<% }); %>
+			</ul>
+		<% } %>
+
+		<% if(filters && filters.length > 0) { %>
+			<ul class="navigation-list filter">
+			<% foreach(filters, function(filter) {  %>
+				<li class="navigation-item">
+					<a class="type internal-link" href="#" data-key="<%: filter.key %>"><%= filter.name %></a>
+				</li>
+			<% }); %>
+			</ul>
+		<% } %>
+	</script>
+
+	<script type="text/html" id="site-banner-user-template">
+		<div class="user">
+			<div class="avatar">
+				<a href="$core_v2_encoding.HtmlAttributeEncode($user.ProfileUrl)">
+					<img src="/cfs-filesystemfile/__key/communityserver-components-imagefileviewer/communityserver-components-avatars_2E00_/default.png_2D00_40x40x2.png" />
+				</a>
+			</div>
+			<span class="user-name">
+				<a href="$core_v2_encoding.HtmlAttributeEncode($user.ProfileUrl)">Anonymous</a>
+			</span>
+		</div>
+
+							<ul class="navigation-list user">
+      																																																																																									</ul>
+			</script>
+
+
+	<script type="text/javascript" src="./flash_SensorTag_hex_files/ui.js.download"></script>
+	<script type="text/javascript">
+		
+		
+
+		
+						
+		
+		jQuery(function(){
+			jQuery.telligent.evolution.widgets.siteBanner.register({
+				wrapper: '#header-1791',
+
+				messagePrefix: 'widget.header-1791.',
+				banner: jQuery('#header-1791_banner'),
+
+				handheldSearchFieldsLink: jQuery('#header-1791_handheldSearchFieldsLink'),
+				handheldSearchFields: jQuery('#header-1791_handheldSearchFields'),
+				handheldBannerLinksLink: jQuery('#header-1791_handheldBannerLinksLink'),
+				handheldBannerLinks: jQuery('#header-1791_handheldBannerLinks'),
+				searchFields: jQuery('#header-1791_searchFields'),
+				bannerLinks: jQuery('#header-1791_bannerLinks'),
+				handheldBannerLinksCount: jQuery('#header-1791_handheldBannerLinksCount'),
+				bannerSiteLinks: jQuery('#header-1791_bannerSiteLinks'),
+				handheldSiteLinksLink: jQuery('#header-1791_handheldSiteLinksLink'),
+				handheldSiteLinks: jQuery('#header-1791_handheldSiteLinks'),
+
+				notificationsTemplate: 'site-banner-list-template',
+				notificationsUrl: '/utility/scripted-file.ashx?=CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file\u0026_cf=notifications.vm\u0026_fid=1791\u0026_ct=header\u0026_cp=\u0026_ctt=c6108064af6511ddb074de1a56d89593\u0026_ctc=bc6b4f21512648579bb4bee17ee37372\u0026_ctn=decec9f8365c4a06ab6053f36924f21f\u0026_cc=0\u0026_pcurl=%7e%2fsupport%2fwireless-connectivity%2fbluetooth%2ff%2f538%2ft%2f594826%3fCCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file',
+				notificationsLink: jQuery('#header-1791_notifications'),
+				notificationsUnread: 0,
+				notificationListFooterContent: '\u003ca href=\"#\" class=\"mark-read left\"  style=\"display:none\" \u003eMark as read\u003c/a\u003e\u003ca class=\"right\" href=\"${notificationSettingsUrl}\"\u003eSettings\u003c/a\u003e',
+				notificationPreferenceTemplate: 'site-banner-notification-preferences-template',
+				notificationssUnreadCountMessageSingular: 'You have {0} unread notification',
+				notificationssUnreadCountMessagePlural: 'You have {0} unread notifications',
+				notificationsFilterTemplate: 'site-banner-notification-filter-template',
+
+				conversationsTemplate: 'site-banner-list-template',
+				conversationsUrl: '/utility/scripted-file.ashx?=CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file\u0026_cf=conversations.vm\u0026_fid=1791\u0026_ct=header\u0026_cp=\u0026_ctt=c6108064af6511ddb074de1a56d89593\u0026_ctc=bc6b4f21512648579bb4bee17ee37372\u0026_ctn=decec9f8365c4a06ab6053f36924f21f\u0026_cc=0\u0026_pcurl=%7e%2fsupport%2fwireless-connectivity%2fbluetooth%2ff%2f538%2ft%2f594826%3fCCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file',
+				conversationsLink: jQuery('#header-1791_conversations'),
+				conversationsUnread: 0,
+				conversationNotificationTypeId: '84e4c0a7-3a17-4dfe-b8a0-d7038aa04a84',
+				conversationListFooterContent: '\u003ca href=\"${core_v2_urls.Conversations()}\" class=\"left\"\u003eView all\u003c/a\u003e\u003ca href=\"#\" data-messagename=\"widget.header-1791.startconversation\" class=\"right\"\u003eNew message\u003c/a\u003e',
+				conversationsUnreadCountMessageSingular: 'You have {0} unread message',
+				conversationsUnreadCountMessagePlural: 'You have {0} unread messages',
+				conversationNewConversationModalUrl: '$core_v2_encoding.JavascriptEncode($core_v2_urls.AddConversation())',
+
+				bookmarksTemplate: 'site-banner-list-template',
+				bookmarksUrl: '/utility/scripted-file.ashx?=CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file\u0026_cf=bookmarks.vm\u0026_fid=1791\u0026_ct=header\u0026_cp=\u0026_ctt=c6108064af6511ddb074de1a56d89593\u0026_ctc=bc6b4f21512648579bb4bee17ee37372\u0026_ctn=decec9f8365c4a06ab6053f36924f21f\u0026_cc=0\u0026_pcurl=%7e%2fsupport%2fwireless-connectivity%2fbluetooth%2ff%2f538%2ft%2f594826%3fCCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file',
+				bookmarksLink: jQuery('#header-1791_bookmarks'),
+				bookmarksListFooterContent: '\u003ca class=\"left\" href=\"${bookmarksUrl}\"\u003eView all\u003c/a\u003e',
+				bookmarksContentTypes: '$core_v2_encoding.JavascriptEncode($contentTypes)',
+				bookmarksApplicationContentTypes: '$core_v2_encoding.JavascriptEncode($applicationContentTypes)',
+				bookmarksContainerContentTypes: '$core_v2_encoding.JavascriptEncode($containerContentTypes)',
+				bookmarksFilterTemplate: 'site-banner-bookmark-filter-template',
+				bookmarksIsBookmarked:  false ,
+				bookmarksCurrentContentId: '',
+				bookmarksBookmarks: 'Bookmarks',
+				bookmarkAdded: 'Bookmark added',
+				bookmarkRemoved: 'Bookmark removed',
+
+				userPopupTemplate: 'site-banner-list-template',
+				userContentTemplate: 'site-banner-user-template',
+				userLink: jQuery('#header-1791_user'),
+
+				searchTemplate: 'site-banner-list-template',
+				searchUrl: '/utility/scripted-file.ashx?=CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file\u0026_cf=search.vm\u0026_fid=1791\u0026_ct=header\u0026_cp=\u0026_ctt=c6108064af6511ddb074de1a56d89593\u0026_ctc=bc6b4f21512648579bb4bee17ee37372\u0026_ctn=decec9f8365c4a06ab6053f36924f21f\u0026_cc=0\u0026_pcurl=%7e%2fsupport%2fwireless-connectivity%2fbluetooth%2ff%2f538%2ft%2f594826%3fCCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file',
+				searchInput: jQuery('#header-1791_Search'),
+				searchFooterContent: '\u003cspan class=\"right\"\u003e\u003ca data-messagename=\"widget.header-1791.advancedsearch\" id=\"header-1791_advancedsearch\" href=\"#\"\u003eAdvanced search\u003c/a\u003e\u003c/span\u003e',
+				searchFilterTemplate: 'site-banner-search-filter-template',
+				searchAdvancedUrl: '/search?{0}',
+				searchAdvancedUserUrl: '/members?{0}',
+				searchFilterContentName: 'Content',
+				searchFilterGroupsName: 'Groups',
+				searchFilterPeopleName: 'People',
+				searchPlaceApplicationId:  'e53e8553-da46-4ce1-a5b5-6588f6b1413a' ,
+				searchPlaceApplicationName:  'In Bluetooth® forum' ,
+				searchPlaceGroupId:  'bc6b4f21-5126-4857-9bb4-bee17ee37372' ,
+				searchPlaceGroupName:  'In Bluetooth®' ,
+				searchPlaceAnywhereName: 'Anywhere',
+				advancedSearchId: 'header-1791_advancedsearch',
+				searchShowPeople:  true
+									,siteNavigationType: 'group'
+					,siteNavigationUrl: '/utility/scripted-file.ashx?=CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file\u0026_cf=groups.vm\u0026_fid=1791\u0026_ct=header\u0026_cp=\u0026_ctt=c6108064af6511ddb074de1a56d89593\u0026_ctc=bc6b4f21512648579bb4bee17ee37372\u0026_ctn=decec9f8365c4a06ab6053f36924f21f\u0026_cc=0\u0026_pcurl=%7e%2fsupport%2fwireless-connectivity%2fbluetooth%2ff%2f538%2ft%2f594826%3fCCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file'
+					,siteNavigationTemplate: 'site-banner-list-template'
+					,siteNavigationLink: jQuery('#header-1791_site')
+					,siteNavigationTitle:  						'Groups'
+																,siteNavigationCustomItems:
+													[
+																			{
+								label: 'Technical articles',
+								url: 'http://e2e.ti.com/blogs_/'
+							}
+													,
+																			{
+								label: 'Support forums',
+								url: 'http://e2e.ti.com/support/'
+							}
+													,
+																			{
+								label: 'Videos',
+								url: 'http://e2e.ti.com/videos/'
+							}
+													,
+																			{
+								label: 'Groups',
+								url: 'http://e2e.ti.com/group/'
+							}
+													 
+								,{
+									label: 'All Groups',
+									url: '/g'
+								}
+														]
+																		});
+		});
+	</script>
+		<script>
+		jQuery(function(j){
+			// no sub-nav on touch
+			if(j('body').hasClass('touch'))
+				return;
+
+			var container = j('#header-1792_container');
+			var popup;
+
+			function hideLinksPopup() {
+				if(popup) {
+					popup.glowPopUpPanel('hide');
+				}
+			}
+
+			function showLinksPopUp(parent, children) {
+				var links = j('<ul></ul>').append(children);
+				links.on('mouseleave', function(){
+					hideLinksPopup();
+				});
+
+				if(popup) {
+					hideLinksPopup();
+					popup.glowPopUpPanel('empty', '')
+						.glowPopUpPanel('append', links)
+						.glowPopUpPanel('show', parent);
+				} else {
+					popup = j('<div></div>')
+						.glowPopUpPanel({
+							cssClass: 'navigation-custom links-popup-panel',
+							zIndex: 1500,
+							hideOnDocumentClick: true
+						})
+						.glowPopUpPanel('append', links)
+						.glowPopUpPanel('show', parent)
+				}
+			}
+
+		container.on('mouseover', '.navigation-list-item', function(e){
+			j(".navigation-custom.links-popup-panel").parent().attr('class','menuPopupPanel');
+		});
+
+			container.on('mouseover', '.navigation-list-item a', function(e){
+				var elm = j(e.target);
+				var children = elm.data('_link_children');
+				if(!children) {
+					children = elm.closest('li').find('ul.children > li');
+					elm.data('_link_children', children);
+				}
+				if(children && children.length > 0) {
+					showLinksPopUp(elm, children);
+				}
+			});
+
+			container.on('mouseout', '.navigation-list-item a', function(e){
+				if(!(e.relatedTarget &&
+					(j(e.relatedTarget).is('.links-popup-panel') ||
+					j(e.relatedTarget).closest('.links-popup-panel').length > 0)))
+					hideLinksPopup();
+			});
+		});
+		</script>
+		<script type="text/javascript">
+		jQuery(function(j){
+			j.telligent.evolution.widgets.scglobal.register();
+		});
+	</script>
+		<script>
+			SystemJS.import( 'widget-groupbanner' )
+			.then( function( init ) {
+				init( {
+					groupMembershipButton:jQuery("#header-1794_groupMembershipButton"),
+					requestJoinUrl:  "/login?ReturnUrl=%2Fsupport%2Fwireless-connectivity%2Fbluetooth%2F%3Frequestmembership%3Dtrue",					canJoinGroup:  false,					canJoinGroupByRequest:  false,					membershipType:"None",
+					groupId:330,
+					userId:2101,
+					errorText:"There was an error joining or leaving the group.",
+					joinedText:"You have joined this group.",
+					leftText:"You have left this group.",
+					wrapperId: 'header-1794',
+											forceRequestMembership:false
+									} );
+			} );
+		</script>
+		<script>
+		SystemJS.import( 'widget-productlinking' ).then( function( init ) {
+			return init( {
+				resources: {"productFolderUrl":"https://www.ti.com/product/{0}","toolFolderUrl":"https://www.ti.com/tool/{0}","productFolderTitle":"Product Folder","toolFolderTitle":"Tool Folder"},
+			} );
+		} );
+	</script>
+<script type="text/javascript">
+// <![CDATA[
+ctl05_ctl01 = new ContentFragmentContainerCustomCallback('ctl05_ctl01',new Function('mode','parameters','callback','errorCallback','context','authValue','ctl05_ctl01_ctl00._doCallback(mode+\':\'+authValue+\':\'+parameters,callback,context,errorCallback);'),'AuthorizationCookie');
+// ]]>
+</script><script>
+SystemJS.import( 'widget-thread' ).then( function( init ) {
+	return init( {
+		wrapperFragmentId: "fragment-320995",
+		threadId: 594826,
+		isAdmin: false,
+		isOP: false,
+		isTIer: false,
+		isSticky: false,
+		pageIndexQueryKey: "pi320995",
+		wrapperId: 'fragment-320995',
+		messages: {
+			paged: "ui.page.pi320995.paged",
+			moreLink: "widget.fragment-320995.more",
+			auditTrail: "widget.fragment-320995.auditTrail"
+		},
+		resources: {"replyModerated":"All replies are moderated. Your reply will appear once a moderator approves it.","resolutionFeedbackDetails":"Please provide details to help us resolve this issue.","suggestedAnswer":"Answer Suggested","tiThinksResolved":"TI Thinks Resolved","resolved":"Resolved","invalidQuoteSelection":"When selecting text to quote, only text from the original post can be selected. Please correct or remove your text selection."},
+		urls: {
+			ajax: {"resolutionStatus":"/utility/scripted-file.ashx?=CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file&_cf=callback-resolutionstatus.vm&_fid=320995&_ct=page&_cp=forums-thread&_ctt=c6108064af6511ddb074de1a56d89593&_ctc=bc6b4f21512648579bb4bee17ee37372&_ctn=decec9f8365c4a06ab6053f36924f21f&_cc=0&_pcurl=%7e%2fsupport%2fwireless-connectivity%2fbluetooth%2ff%2f538%2ft%2f594826%3fCCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file","subscribe":"/utility/scripted-file.ashx?=CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file&_cf=subscribe.vm&_fid=320995&_ct=page&_cp=forums-thread&_ctt=c6108064af6511ddb074de1a56d89593&_ctc=bc6b4f21512648579bb4bee17ee37372&_ctn=decec9f8365c4a06ab6053f36924f21f&_cc=0&_pcurl=%7e%2fsupport%2fwireless-connectivity%2fbluetooth%2ff%2f538%2ft%2f594826%3fCCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file","endorse":"/utility/scripted-file.ashx?=CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file&_cf=callback-endorse.vm&_fid=320995&_ct=page&_cp=forums-thread&_ctt=c6108064af6511ddb074de1a56d89593&_ctc=bc6b4f21512648579bb4bee17ee37372&_ctn=decec9f8365c4a06ab6053f36924f21f&_cc=0&_pcurl=%7e%2fsupport%2fwireless-connectivity%2fbluetooth%2ff%2f538%2ft%2f594826%3fCCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file","unlink":"/utility/scripted-file.ashx?=CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file&_cf=callback-unlink.vm&_fid=320995&_ct=page&_cp=forums-thread&_ctt=c6108064af6511ddb074de1a56d89593&_ctc=bc6b4f21512648579bb4bee17ee37372&_ctn=decec9f8365c4a06ab6053f36924f21f&_cc=0&_pcurl=%7e%2fsupport%2fwireless-connectivity%2fbluetooth%2ff%2f538%2ft%2f594826%3fCCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file","moreActions":"/utility/scripted-file.ashx?=CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file&_cf=callback-more-actions.vm&_fid=320995&_ct=page&_cp=forums-thread&_ctt=c6108064af6511ddb074de1a56d89593&_ctc=bc6b4f21512648579bb4bee17ee37372&_ctn=decec9f8365c4a06ab6053f36924f21f&_cc=0&_pcurl=%7e%2fsupport%2fwireless-connectivity%2fbluetooth%2ff%2f538%2ft%2f594826%3fCCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file","auditTrail":"/utility/scripted-file.ashx?=CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file&_cf=audit-trail.vm&_fid=320995&_ct=page&_cp=forums-thread&_ctt=c6108064af6511ddb074de1a56d89593&_ctc=bc6b4f21512648579bb4bee17ee37372&_ctn=decec9f8365c4a06ab6053f36924f21f&_cc=0&_pcurl=%7e%2fsupport%2fwireless-connectivity%2fbluetooth%2ff%2f538%2ft%2f594826%3fCCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file","mute":"/utility/scripted-file.ashx?=CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file&_cf=mute.vm&_fid=320995&_ct=page&_cp=forums-thread&_ctt=c6108064af6511ddb074de1a56d89593&_ctc=bc6b4f21512648579bb4bee17ee37372&_ctn=decec9f8365c4a06ab6053f36924f21f&_cc=0&_pcurl=%7e%2fsupport%2fwireless-connectivity%2fbluetooth%2ff%2f538%2ft%2f594826%3fCCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file","deleteVerifyAnswerExtAttr":"/utility/scripted-file.ashx?=CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file&_cf=deleteVerifyAnswerExtAttr.vm&_fid=320995&_ct=page&_cp=forums-thread&_ctt=c6108064af6511ddb074de1a56d89593&_ctc=bc6b4f21512648579bb4bee17ee37372&_ctn=decec9f8365c4a06ab6053f36924f21f&_cc=0&_pcurl=%7e%2fsupport%2fwireless-connectivity%2fbluetooth%2ff%2f538%2ft%2f594826%3fCCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file","advancedReply":"/utility/scripted-file.ashx?=CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file&_cf=callback-advancedreply.vm&_fid=320995&_ct=page&_cp=forums-thread&_ctt=c6108064af6511ddb074de1a56d89593&_ctc=bc6b4f21512648579bb4bee17ee37372&_ctn=decec9f8365c4a06ab6053f36924f21f&_cc=0&_pcurl=%7e%2fsupport%2fwireless-connectivity%2fbluetooth%2ff%2f538%2ft%2f594826%3fCCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file"}
+		},
+		totalReplyCount: 6
+	} );
+} );
+</script>
+<script type="text/javascript">
+// <![CDATA[
+ctl05_ctl02 = new ContentFragmentContainerCustomCallback('ctl05_ctl02',new Function('mode','parameters','callback','errorCallback','context','authValue','ctl05_ctl02_ctl00._doCallback(mode+\':\'+authValue+\':\'+parameters,callback,context,errorCallback);'),'AuthorizationCookie');
+// ]]>
+</script>	<script type="text/javascript" src="./flash_SensorTag_hex_files/ui.js(1).download"></script>
+	<script type="text/javascript">
+		jQuery(function(){
+			jQuery.telligent.evolution.widgets.userHover.register({
+				getUserInformationUrl: '/utility/scripted-file.ashx?=CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file\u0026_cf=get-user-information.vm\u0026_fid=1690\u0026_ct=footer\u0026_cp=forums-thread\u0026_ctt=c6108064af6511ddb074de1a56d89593\u0026_ctc=bc6b4f21512648579bb4bee17ee37372\u0026_ctn=decec9f8365c4a06ab6053f36924f21f\u0026_cc=0\u0026_pcurl=%7e%2fsupport%2fwireless-connectivity%2fbluetooth%2ff%2f538%2ft%2f594826%3fCCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file',
+				getRecentActivityUrl: '/utility/scripted-file.ashx?=CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file\u0026_cf=get-recent-activity.vm\u0026_fid=1690\u0026_ct=footer\u0026_cp=forums-thread\u0026_ctt=c6108064af6511ddb074de1a56d89593\u0026_ctc=bc6b4f21512648579bb4bee17ee37372\u0026_ctn=decec9f8365c4a06ab6053f36924f21f\u0026_cc=0\u0026_pcurl=%7e%2fsupport%2fwireless-connectivity%2fbluetooth%2ff%2f538%2ft%2f594826%3fCCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file'
+			});
+		});
+	</script>
+	<script type="text/javascript">
+	//<![CDATA[
+
+        jQuery.telligent.evolution.ui.components.moderate.defaults = {
+    		reportedText: 'Thank you for your report',
+    		flagText: 'Flag as spam/abuse',
+    		flaggedText: 'Flagged as spam/abuse'
+    	};
+	//]]>
+	</script>
+<script type="text/javascript">
+// <![CDATA[
+ctl05_ctl03 = new ContentFragmentContainerCustomCallback('ctl05_ctl03',new Function('mode','parameters','callback','errorCallback','context','authValue','ctl05_ctl03_ctl00._doCallback(mode+\':\'+authValue+\':\'+parameters,callback,context,errorCallback);'),'AuthorizationCookie');
+// ]]>
+</script><script type="text/javascript">
+// <![CDATA[
+window.ctl05_ctl01_ctl00 = new Telligent_CallbackManager('ctl05_ctl01_ctl00','ctl05$ctl01$ctl00','ctl04');
+// ]]>
+</script><script type="text/javascript">
+// <![CDATA[
+window.ctl05_ctl02_ctl00 = new Telligent_CallbackManager('ctl05_ctl02_ctl00','ctl05$ctl02$ctl00','ctl04');
+// ]]>
+</script><script type="text/javascript">
+// <![CDATA[
+window.ctl05_ctl03_ctl00 = new Telligent_CallbackManager('ctl05_ctl03_ctl00','ctl05$ctl03$ctl00','ctl04');
+// ]]>
+</script></form><noscript><img src="http://e2e.ti.com/akam/11/pixel_126d0692?a=dD1hNDVmNGZlM2M3YmZkZTcwYmE1YWI4OTY3YmI5NWYyYWZmOGMyYTM1JmpzPW9mZg==" style="visibility: hidden; position: absolute; left: -999px; top: -999px;" /></noscript><iframe name="syncIframe" id="cn" height="1" width="1" style="display:none" src="./flash_SensorTag_hex_files/xdomain-sync.html"></iframe><iframe name="syncIframe" id="jp" height="1" width="1" style="display:none" src="./flash_SensorTag_hex_files/xdomain-sync(1).html"></iframe><iframe name="__bkframe" id="__bkframe" title="bk" src="./flash_SensorTag_hex_files/saved_resource.html" style="border: 0px; width: 0px; height: 0px; display: none; position: absolute; clip: rect(0px, 0px, 0px, 0px);"></iframe></body></html>

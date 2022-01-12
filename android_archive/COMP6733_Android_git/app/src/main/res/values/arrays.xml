@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bodyParts">
+        <!-- Left side, upper -->
+        <item>Left Upper Arm</item>
+        <item>Left Forearm</item>
+        <item>Left Hand</item>
+        <!-- Right side, upper -->
+        <item>Right Upper Arm</item>
+        <item>Right Forearm</item>
+        <item>Right Hand</item>
+    </string-array>
+</resources>

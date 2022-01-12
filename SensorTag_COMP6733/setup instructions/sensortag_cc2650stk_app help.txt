@@ -1,0 +1,58 @@
+[[ Week 9 continued investigations ]]
+ * It just builds now, but I don't know why: sensortag_cc2650stk_app  - (because: compiler version)
+
+.hex and .out both located at: (NOTE: only a subset!- see merge.bat for all)
+C:\ti\simplelink\ble_sdk_2_02_03_08\examples\cc2650stk\sensortag\ccs\app\FlashOnly_OAD
+
+Convert .out to .hex (if needed): (at file dir as per above)
+ * http://e2e.ti.com/support/microcontrollers/other/f/908/t/652549
+ * http://e2e.ti.com/support/tools/ccs/f/81/t/750567?CCS-MSP430G2433-Incomplete-Intel-Hex-file-
+C:\ti\ti-cgt-arm_16.9.4.LTS\bin\armhex.exe -o=comp6733.hex --memwidth=8 --romwidth=8 --intel sensortag_cc2650stk_app.out
+(not needed anymore, follow the instructions below)
+
+Advertise indefinitely: (FOLLOW THESE INSTRUCTIONS)
+https://github.com/PeakUp/TIDC-CC2650STK-SENSORTAG-Custom-Firmware-Continuous-Advertising-Broadcasting-/blob/master/CC2650stk%20-%20Sensortag%20Custom%20Firmware%20Download%20(Continuous%20Broadcast_Advertise).rtf
+http://e2e.ti.com/support/tools/ccs/f/81/t/621174    - even clearer instructions!
+http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/594826?CCS-CC2650STK-Unable-to-flash-SensorTag-super-hex-file    - make sure to use the exact compiler for it to compile...
+
+ * C:\ti\simplelink\ble_sdk_2_02_03_08\src\examples\sensortag\cc26xx\app
+   (sensortag.c file) - MODIFIED (ble setting changes, follow guide)
+
+ * C:\ti\simplelink\ble_sdk_2_02_03_08\examples\cc2650stk\sensortag\ccs\app
+   (merge.bat) - MODIFIED (remove hardcoded file paths and use Python 3, open file to see them)
+   GO HERE:   C:\ti\simplelink\ble_sdk_2_02_03_08\examples\cc2650stk\sensortag\ccs\app
+   RUN THIS:  merge.bat
+
+   "Created app\FlashOnly_OAD\sensortag_cc2650stk_all.hex"
+   C:\ti\simplelink\ble_sdk_2_02_03_08\examples\cc2650stk\sensortag\ccs\app\FlashOnly_OAD
+   Flash the full executable:    sensortag_cc2650stk_all.hex
+   
+   Successfully builds and runs!
+
+
+########################################################################################
+[[ Initial TI-RTOS setup ]]
+16.9.4 LTS [ARM] - compiler
+Prefernces > CCS > Build > Compilers
+ * http://software-dl.ti.com/lprf/simplelink_cc2640r2_latest/docs/blestack/ble_user_guide/html/cc2640/developing_in_ccs.html#sec-install-ti-arm-compiler
+ * (unselect "latest versions of available software")
+ * http://www.ti.com/tool/download/ARM-CGT-16/16.9.4.LTS (above method didn't work, try manual install. add the folder containing the downloaded folder to the location above)
+
+(General suggestion): http://software-dl.ti.com/lprf/simplelink_cc2640r2_latest/docs/blestack/ble_user_guide/html/cc2640/developing_in_ccs.html
+
+
+missing build variables:
+ * https://e2e.ti.com/support/tools/ccs/f/81/t/210135
+ * look at the linker for these errors
+
+ * try ccs v6 (where they first add in cc2650?)  - try 6.2
+
+try this first (with ResEx):
+ * https://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/420369
+ * http://e2e.ti.com/support/wireless-connectivity/bluetooth/f/538/t/494474
+
+demo:
+ * https://www.youtube.com/watch?v=dZBko9Zb5Ng
+
+miscellaneous:
+ * https://github.com/ti-simplelink/ble_examples/blob/master/docs/faq.md

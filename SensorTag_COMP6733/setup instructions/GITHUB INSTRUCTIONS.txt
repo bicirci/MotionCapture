@@ -1,0 +1,60 @@
+https://github.com/PeakUp/TIDC-CC2650STK-SENSORTAG-Custom-Firmware-Continuous-Advertising-Broadcasting-/blob/master/CC2650stk%20-%20Sensortag%20Custom%20Firmware%20Download%20(Continuous%20Broadcast_Advertise).rtf
+
+**************************************
+TIDC-CC2650STK-SENSORTAG FIRMWARE v1.0
+**************************************
+For further questions -> berkay13ozturk@gmail.com
+
+Application Directory: ...\ti\simplelink\ble_sdk_2_02_01_18\examples\cc2650stk\sensortag\ccs
+Modified Files:  	sensortag.c 	merge.bat 	cc26xx_app.cmd
+
+Brief: 
+   Device is advertising indefinetely (continuous) from start-up and re-advertises itself when there is a connection failure.
+
+Modifications:	(Apply the following)
+
+    sensortag.c (line number*)
+        #define DEFAULT_DISCOVERABLE_MODE  GAP_ADTYPE_FLAGS_GENERAL (115)
+        uint8_t initialAdvertEnable = TRUE; (425)
+        uint16_t advertOffTime = 1; (430)    
+
+    merge.bat
+        @set DEST_PATH= (Set the output destination path for hex file inside " ")    
+        @set APP_PATH= (Application's generated hex file path, inside " ")
+        @set STACK_PATH= (Stack's generated hex file path, inside " ")
+        @set BIM_PATH= (Absolute BIM file path, inside " ")
+
+    cc26xx_app.cmd (Simply remove or comment the lines below)
+         FLASH_LAST_PAGE (RX) :  origin = FLASH_LAST_PAGE_START, length = FLASH_PAGE_LEN
+         .ccfg           :   >  FLASH_LAST_PAGE (HIGH)
+
+Build Workflow:
+1_ Download BLE stack (BLE-STACK-2-2-1) from http://www.ti.com/tool/ble-stack
+2_ Open CCS (Tested on Version 7.1)
+3_ Import project from ..\ti\simplelink\ble_sdk_2_02_01_18\examples\cc2650stk\sensortag\ccs -> Import both app and stack project.
+4_ If project builds automatically clean all
+5_ From build settings select 'Enable ARM Hex Utility' (Flags: --memwidth=8 --romwidth=8 --intel) for both app and stack project
+   Select an ARM compiler (Tested on TI v17.6.0 STS) for both project. Download from Resource Explorer if there is no up-to-date version
+6_ Build projects (No problems or warnings shall arise)
+⦁    First build stack project
+⦁    Build app project last
+7_ There should now be two *.hex files generated under each project folder
+⦁    Application's hex file is under FlashOnly_OAD folder
+⦁    Stack's hex file is under FlashROM folder
+8_ Download SmartRf Studio 7 and SmartRf Flash Programmer 2 from http://www.ti.com/tool/smartrftm-studio, http://www.ti.com/tool/flash-programmer
+9_ Download IntelHex 2.1 from https://pypi.python.org/pypi/IntelHex
+⦁    Install the library (Tested using pip installation, Python 2.7.13)
+10_ Merge the two hex files in step 7 by running the merge.bat file (in CCS)
+⦁    If everything is correct you should see the following;
+⦁    Created "..\..\.."\sensortag_cc2650stk_app_stack_oad.hex
+⦁    Created "..\..\.."\sensortag_cc2650stk_all.hex    
+11_ Merged hex files are now ready under the directory we previously defined in merge.bat file
+12_ Connect the Debugger DevPack (Tested on REV: 1.3.0) (Connect the debugger first without connecting it to sensortag if there is no battery supplied to sensortag)
+⦁    Connect the sensortag to debugger (If there is no battery)
+    (If there is a battery supply present in the sensortag, connection could be done simultaneous)
+13_ Open SmartRf Studio 7 and SmartRf Flash Programmer 2
+14_ First erase-program-verify with "..\ti\simplelink\ble_sdk_2_02_01_18\examples\hex\cc2650stk_sensortag_rel.hex" (original hex file)
+⦁    In actions -> erase section select Pages in image
+⦁    Supply the merged hex file above (in step 11)
+⦁    Erase-Program-Verify
+15_ If all the above settings done correctly, the custom firmware is uploaded to the device and ready to use !

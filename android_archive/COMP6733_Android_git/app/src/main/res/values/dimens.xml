@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="paddingNone">0dp</dimen>
+    <dimen name="paddingSmallSpace">10sp</dimen>
+    <dimen name="paddingTinySpace">5sp</dimen>
+</resources>

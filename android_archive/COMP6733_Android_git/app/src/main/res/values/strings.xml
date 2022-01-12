@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">COMP6733</string>
+    <string name="stringBleScan">Rescan for Devices</string>
+    <string name="stringCalibrate">Calibrate Selected</string>
+    <string name="stringRegisterSensor" >Use this device?</string>
+    <string name="stringSensorTitle" >No SensorTag found...</string>
+    <string name="stringMacAddress">MAC Address:</string>
+    <string name="stringUuid">Bluetooth UUID:</string>
+    <string name="stringUnknown">Unknown</string>
+    <string name="stringSelectBodyPart">Select Body Part:</string>
+</resources>

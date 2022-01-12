@@ -1,0 +1,155 @@
+/**Registration List**/
+.content-fragment.event-registration-list .content-item { position: relative; border-top: 0; border-bottom: 1px dotted #ccc; padding: 14px 0 8px 0; min-height: 38px; }
+.content-fragment.event-registration-list .content-item .avatar { padding: 1px; border: solid 1px #ccc; position: absolute; left: 0; top: 8px; }
+.content-fragment.event-registration-list .content-item .avatar img { max-width: 40px; max-height: 40px; }
+.content-fragment.event-registration-list .filter { border-top: 0; }
+.content-fragment.event-registration-list .content-item .user-name { margin-left: 48px; font-weight: bold; }
+.content-fragment.event-registration-list .content-item .abbreviated-post { margin: 0 0 0 48px; padding: 0; color: #999; font-size: 10px; min-height: 0;}
+.content-fragment.event-registration-list .navigation-item { font-weight: bold; margin-top: 4px; }
+.content-fragment.event-registration-list .field-item { display: inline; }
+.content-fragment.event-registration-list .field-item .edit-group-membership { border-left: 1px solid #ccc; padding-left: 5px; }
+.content-fragment.event-registration-list .table-list { position: relative; width: 100%; }
+.content-fragment.event-registration-list .table-item .table-column { position: relative; overflow: hidden; }
+.content-fragment.event-registration-list .table-item .table-column .field-list, .content-fragment.group-membership-list .table-item .table-column.membership-status { text-align: right; }
+.content-fragment.event-registration-list .table-item .registration-actions{ text-align: right;}
+.content-fragment.event-registration-list .table-item .user-info{width:35%}		
+.content-fragment.event-registration-list .field-list .field-item-header { padding-top: 6px; }
+.content-fragment.event-registration-list .field-list .field-list-description { padding-left: 0; font-size: 14px; font-weight: bold; margin-bottom: 10px; padding-top: 15px; }
+.content-fragment.event-registration-list .field-list .field-item-input textarea { display: block; }
+.content-fragment.event-registration-list .field-list .field-item .avatar img {-webkit-border-radius: 500px; -moz-border-radius: 500px; border-radius: 500px;}
+
+/**Registration List**/
+
+/* $Calendar Create Edit Event Comment
+/******************************/
+
+.content-fragment.create-edit-page-comment { position: relative; }
+.content-fragment.create-edit-event-comment-form .field-list { margin: 0; padding: 0; width: 100%; }
+.content-fragment.create-edit-event-comment-form .field-list-header { display: none; }
+.content-fragment.create-edit-event-comment-form .field-list-description { padding: 10px 10px 0 0; text-transform: uppercase; font-size: 10px; font-weight: bold; color: #666; }
+.content-fragment.create-edit-event-comment-form .field-item-header { color: #555; }
+.content-fragment.create-edit-event-comment-form .field-item { margin: 8px 0; padding: 0; position: relative; }
+.content-fragment.create-edit-event-comment-form .field-item input { border: 1px solid #ccc; }
+.content-fragment.create-edit-event-comment-form .field-item.post-body { margin-right: 8px;}
+.content-fragment.create-edit-event-comment-form .field-item textarea { width: 100%; border: 1px solid #ccc; color:#333; padding: 3px; font-family: Arial, Sans-Serif; font-size: 1em; }
+.content-fragment.create-edit-event-comment-form .field-item .field-item-validation { font-weight: bold; }
+.content-fragment.create-edit-event-comment-form .field-list-footer { display: none; }
+.content-fragment.create-edit-event-comment-form .field-item .internal-link.add-reply { font-weight: bold; margin-top: -2px; position: relative; height: 22px; display: inline-table; display: -moz-inline-box; display: inline-block; line-height: 22px; color: #fff; font-size: 11px; padding: 0; z-index: 3; }
+.content-fragment.create-edit-event-comment-form .field-item .internal-link.add-reply span { display: inline-table; display: -moz-inline-box; display: inline-block; position: absolute; left: -12px; top: 0; width: 12px; height: 22px; }
+
+/* $Calendar Calendar
+/******************************/
+.event_calendar {width:99%;}
+div.event_calendar_content{text-align:center;}
+div.event_calendar_content table{text-align:left;margin:0px auto;color:#333}
+div.event_calendar_content table tbody.month_cells{ border: 1px solid #ccc;}
+div.event_calendar_content table.event_calendar tr.month_head{height:75px;}
+div.event_calendar_content table.event_calendar tr.month_weekday{background: #ccc; padding: 5px; height: 30px; border: 1px solid #ccc;}
+div.event_calendar_content table th{text-align:center;}
+div.event_calendar_content table.event_calendar tbody td.empty_cell{border: none;}
+div.event_calendar_content table.event_calendar tbody td{height:110px;width:100px;border:solid 1px #dcdcdc;vertical-align:top;overflow:hidden;}
+div.event_calendar_content table.event_calendar tbody td span{display:block;font-size:80%;padding-left:3px;}
+div.event_calendar_content table.event_calendar tbody td ul.event_list{list-style:none;padding:0;margin:0;}
+div.event_calendar_content table.event_calendar tbody td ul.event_list li{margin:2px;font-size:80%;border-left: 4px solid #00bbcc;padding-left: 3px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; width: 80px;word-wrap: normal !important;}
+div.event_calendar_content table.event_calendar tbody td ul.event_list li.cancelled_event{border-left: 4px solid #cc0000;}
+div.event_calendar_content table.event_calendar tbody td ul.event_list li.cancelled_event a{color:#cc0000;}
+td.event_calendar_today{border: 2px solid #00bbcc !important;} 
+td.event_calendar_selected{border: 2px solid #efb9b9 !important;} 
+div.month_wrapper{position:relative;top: 7px;}
+table.event_calendar div.month_wrapper span{font-size:115%;position:absolute;left:15px;display: inline-block;width: 180px;}
+div.month_wrapper a.next_link:hover{text-decoration:none;}
+div.month_wrapper a.next_link{position:absolute;left:190px;display: inline-block; width: 20px;}
+div.month_wrapper a.next_link:before{text-indent: 0; position: absolute; text-align: center; width: 20px; height: 20px; top: 0; left: 0; display: block; content: "\E87D"; font-family: Entypo; font-size: 20px; line-height: 20px;}
+div.month_wrapper a.prev_link:hover{text-decoration:none;}
+div.month_wrapper a.prev_link{position:absolute;left:0px;display: inline-block; width: 20px;}
+div.month_wrapper a.prev_link:before{text-indent: 0; position: absolute; text-align: center; width: 20px; height: 20px; top: 0; left: 0; display: block; content: "\E87C"; font-family: Entypo; font-size: 20px; line-height: 20px;}
+div.event_calendar_content table{padding:0px 5px 0 5px;border-collapse:collapse;}
+div.event_calendar_content table.event_calendar_small div.month_wrapper a.next_link{left: 225px;}
+div.event_calendar_content table.event_calendar_small tbody td.empty_cell{background:#fff;}
+div.event_calendar_content table.event_calendar_small tr.month_head{height:50px;}
+div.event_calendar_content table.event_calendar_small th{text-align:center;font-size:90%;}
+div.event_calendar_content table.event_calendar_small tbody td span,div.event_calendar_content table.event_calendar_small tbody td a{display:block;font-size:80%;padding-left:1px;}
+div.event_calendar_content table.event_calendar_small tbody td{height:35px;width:35px;border:solid 1px #fff;vertical-align:top;overflow:hidden;text-align:center;}
+div.event-calendar.hide { display: none; }
+div.event-calendar-modal .content-list .content-item{border-bottom: solid 1px #e0e0e0; padding: 5px 0;}
+
+/* Event Links
+/*****************************/
+.content-fragment.event-links .navigation-item { border-bottom: 1px dotted #ccc; position: relative; }
+.content-fragment.event-links .navigation-item .internal-link { padding-left: 19px; position: relative; display: block; }
+.content-fragment.event-links .navigation-item .internal-link span { position: absolute; width: 10px; height: 10px; left: 0; top: 3px; }
+.content-fragment.event-links .navigation-item .email-subscription-form { margin: 0; }
+.content-fragment.event-links .navigation-item .email-subscription-form .field-item { position: relative; padding: 0; }
+.content-fragment.event-links .navigation-item .email-subscription-form .field-item-input { padding-left: 18px; display: block; }
+.content-fragment.event-links .navigation-item .email-subscription-form .field-item-input input { width: 82%; margin: 5px 0; font-size: 10px; border: 1px solid #ccc; margin: 0 0 1px 0; padding: 1px; }
+.content-fragment.event-links .navigation-item .email-subscription-form .field-item-description { padding-left: 18px; display: block; }
+.content-fragment.event-links .navigation-item .internal-link.view-registrations span { margin: 0; }
+.content-fragment.event-links .navigation-item .internal-link.download-event span {width:16px;}
+
+            
+/*Event List*/
+.content-fragment.event-list li.content-item { padding-left: 19px; position: relative; margin: 0; height:25px; }
+.content-fragment.event-list li.content-item a.cancelled_event{color:#cc0000;}
+
+/*Calendar links*/
+.content-fragment.calendar-links .navigation-item { border-bottom: 1px dotted #ccc; position: relative; }
+.content-fragment.calendar-links .navigation-item .internal-link { padding-left: 19px; position: relative; display: block; }
+.content-fragment.calendar-links .navigation-item .internal-link span { position: absolute; width: 10px; height: 10px; left: 0; top: 3px; }
+.content-fragment.calendar-bread-crumbs {padding-left:8px;}
+.content-fragment.calendar-list-fragment .abbreviated-post{ padding:0px 0 10px 60px;}
+
+.content-fragment.event-widget .event-links{ padding:10px 0 0 10px;}
+.content-fragment.event-widget .event-links .event-tags {display:inline;font-weight:bold;margin-left:8px;padding-left:16px;}
+.content-fragment.event-widget .actions.register { background-color: inherit; border-width: 0; padding: 0; height: auto; margin: 0; float: right; width: auto !important;}
+.content-fragment.event-widget .actions.register .button {float: right; line-height: 44px; height: 44px; padding: 0 30px 0 30px; border: 0px; border-radius: 3px; display: inline-block; background-color: #115566; color: white; font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif; font-size: 16px; margin-right: 10px; -webkit-transition: background-color 0.15s; -moz-transition: background-color 0.15s; transition: background-color 0.15s; margin: 32px 0;}
+.content-fragment.event-widget .content-buttons { width: auto;margin-top: 30px;}
+.content-fragment.event-widget .message { margin: 5px 0;}
+.content-fragment.event-widget .attribute-item {font-size: 14.4px;}
+.content-fragment.event-widget .external-preview .abbreviated-post { font-size: 13.6px; background-color: #f0f0f0; padding: 5px 5px 0 100px;}
+.content-fragment.event-widget .external-preview .abbreviated-post .post-summary {margin-bottom: 0px; font-size: 12.8px; line-height: 1.4em;}
+.content-fragment.event-widget .external-preview .abbreviated-post h4 {border-bottom: 0px; padding-left: 0px; font-size: 1.0em;margin-bottom: 0px;}
+.content-fragment.event-widget .external-preview .abbreviated-post .post-name a{font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif; font-size: 13.6px;font-weight: normal !important;}
+
+.event-tags .internal-link.edit-tags {font-size:9px;font-weight:normal;margin-left:3px;}
+
+/*Maps*/
+.content-fragment.event-edit-widget .field-item.event-location { position: relative; }
+div.geocoded-map-content{text-align:center;}
+div.geocoded-map-content .map-loader{background: #e0e0e0;}
+div.geocoded-map-content img{display:block;margin:0 auto;} 
+.geocode_subform_wrapper{display:none;}
+
+/* Registration Add */    
+.content-fragment.event-registration-add-form .internal-link.registration-button { display: block; font-size: 11px; color: #fff; float: left; display: block; position: relative; margin-left: 12px; height: 22px; padding: 4px 10px 3px 0; font-weight: bold; }
+.content-fragment.event-registration-add-form .internal-link.registration-button span { position: absolute; left: -8px; top: 0; height: 22px; width: 8px; display: block; }
+	
+.content-fragment.event-registration-invite-form .field-list-description { display:none; }
+.content-fragment.event-registration-invite-form .field-list .field-list-description { font-size:14px; font-weight:bold; margin-bottom:10px; padding-left:0; padding-top:15px; }
+.content-fragment.event-registration-invite-form .field-list .field-item-header { padding-top:6px; }
+.content-fragment.event-registration-invite-form .field-list .field-item-input textarea { display:block; }
+.content-fragment.event-registration-invite-form .field-item { position:relative; }
+.content-fragment.event-registration-invite-form .field-item.invite-member { display:block; }
+.content-fragment.event-registration-list .registration-actions a {display: inline-block;width: 20px;height: 20px;text-indent: 200%;white-space: nowrap;overflow: hidden;position: relative;top: 1px;}
+.content-fragment.event-registration-list .registration-actions .cancel-registration:before {content: "\E813"; display: block; font-family: Entypo; font-size: 25px; height: 20px; left: 0; line-height: 20px; position: absolute; text-align: center; text-indent: 0; top: 0; width: 20px;}
+.content-fragment.event-registration-list .registration-actions .confirm-registration:before {content: "\E812"; display: block; font-family: Entypo; font-size: 20px; height: 20px; left: 0; line-height: 20px; position: absolute; text-align: center; text-indent: 0; top: 0; width: 20px;}
+
+/* Activity Stories */
+.activity-container.calendar:before { content: "\E85B";color: #707b80;font-family: Entypo; font-size: 70px; position: absolute; top: 60px; left: 12px;}
+.activity-container.calendar{background-color: #f9f9f9; border: 1px solid #e0e0e0;padding: 5px 5px 5px 85px;min-height: 85px;}
+.activity-title.calendar a{font-size: 20px;}
+.activity-title.calendar.cancelled{color:#cc0000;}
+span.who-is-coming, span.remaining-users{font-weight:bold;}
+
+.content-fragment.event-edit-widget .event-startdate img { vertical-align: middle; margin-top: -3px; }
+.content-fragment.event-edit-widget .event-enddate img { vertical-align: middle; margin-top: -3px; }
+.content-fragment.event-list h3 {
+    color: #333;
+    font-size: 1.2em;
+}
+.content-fragment.event-list a {
+    color: #118899;
+}
+.content-fragment.event-list a:hover {
+    color: #cc0000;
+}
+

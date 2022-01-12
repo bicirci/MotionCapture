@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="colorBackground">#D5D5D5</color>
+    <color name="colorSensorItemBackground">#FFFFFF</color>
+    <color name="colorSensorItemEnabledBackground">#C6FAAB</color>
+    <color name="colorBleButton">#4A8CFF</color>
+    <color name="colorProceedButton">#7BAD6D</color>
+</resources>

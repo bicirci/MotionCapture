@@ -1,0 +1,4 @@
+div.event-calendar.large { display: none; }
+div.event-calendar.small { display: block; }
+.event_calendar_content {position: relative;}
+.event_calendar_small .navigation-list.navigation{ position: absolute; bottom: 0; left: -20px; margin-bottom: 0; }
